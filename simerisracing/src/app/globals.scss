@@ -1,0 +1,28 @@
+$pink: #ff00ff;
+$blue: #0000ff;
+
+@layer reset {
+    body, html {
+        overflow-y: hidden;
+        padding: 0;
+        margin: 0;
+        background-color: black;
+        color: white;
+        font-family: Arial;
+    }
+
+    body {
+        width: 100%;
+        min-height: 100svh;
+    }
+
+    .a {
+        color: #ff00ff;
+        text-decoration: none;
+        transition: color 0.3s ease-in-out;
+
+        &:hover {
+            color: #ff55ff;
+        }
+    }
+}
