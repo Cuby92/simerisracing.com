@@ -1,0 +1,28 @@
+$pink: #ff00ff;
+$blue: #0000ff;
+
+.Footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background-image: #00000066, linear-gradient(45deg, $pink, $blue);
+    padding: 2rem;
+    width: 100%;
+
+    .a {
+        color: black;
+        text-decoration-color: #00000000;
+        text-underline-offset: 1rem;
+        font-size: 1.2rem;
+        font-family: Arial;
+        transition: 
+            text-underline-offset 0.3s ease-in-out,
+            text-decoration-color 0.3s ease-in-out;
+
+        &:hover {
+            text-underline-offset: 0.1rem;
+            text-decoration-color: #000000;
+        }
+    }
+}
