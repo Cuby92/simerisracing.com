@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./globals.scss";
 
 function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
