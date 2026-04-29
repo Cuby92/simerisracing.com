@@ -11,11 +11,11 @@ function Header() {
             <motion.a 
                 className={s.logo} href="/" 
                 whileHover={{ 
-                    scale: 1.05, 
+                    scale: 1.01, 
                     '--beforeOpacity': 1, 
                     transition: { duration: 0.4, ease: 'easeOut' }
                 }}
-                transition={{ duration: 0.4, ease: 'easeOut'}}></motion.a>
+                transition={{ duration: 0.4, ease: 'easeOut' }}></motion.a>
         </header>
     );
 }
