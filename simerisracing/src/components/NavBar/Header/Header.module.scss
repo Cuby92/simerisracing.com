@@ -1,1 +1,32 @@
 @import '../../../app/globals.scss';
+
+.Header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+}
+
+.logo {
+    width: calc(1288px * 0.25);
+    height: calc(158px * 0.25);
+    mask-image: url('/img/logo/logo-white.svg');
+    @include stdGradient();
+    position: relative;
+    --before-opacity: 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        opacity: var(--beforeOpacity);
+        background: linear-gradient(
+            45deg,
+            $pinkLCH,
+            lch(45.64 116.51 313.28)
+        );
+    }
+}

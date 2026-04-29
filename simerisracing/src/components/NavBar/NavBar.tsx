@@ -7,7 +7,7 @@ const s = styles;
 function NavBar() {
     return (
         <nav>
-            
+            <Header />
         </nav>
     );
 }
