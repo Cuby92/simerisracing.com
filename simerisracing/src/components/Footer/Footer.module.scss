@@ -1,17 +1,17 @@
-$pink: #ff00ff;
-$blue: #0000ff;
+@import '../../app/globals.scss';
 
 .Footer {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     flex-wrap: wrap;
-    background-image: #00000066, linear-gradient(45deg, $pink, $blue);
     padding: 2rem;
     width: 100%;
+    @include stdGradient();
 
     .a {
-        color: black;
+        color: white;
         text-decoration-color: #00000000;
         text-underline-offset: 1rem;
         font-size: 1.2rem;

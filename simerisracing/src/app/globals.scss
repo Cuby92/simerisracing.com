@@ -1,6 +1,17 @@
 $pink: #ff00ff;
 $blue: #0000ff;
 
+$pinkLCH: lch(60.17 111.41 327.1);
+$blueLCH: lch(29.57 131.2014 301.3643);
+
+@mixin stdGradient($angle: 45deg) {
+    background: linear-gradient(
+        $angle,
+        $pinkLCH,
+        $blueLCH
+    );
+}
+
 @layer reset {
     body, html {
         overflow-y: hidden;
@@ -13,7 +24,6 @@ $blue: #0000ff;
 
     body {
         width: 100%;
-        min-height: 100svh;
     }
 
     .a {
@@ -24,5 +34,14 @@ $blue: #0000ff;
         &:hover {
             color: #ff55ff;
         }
+    }
+}
+
+@layer layout {
+    #mainBody {
+        display: grid;
+        width: 100%;
+        grid-template-rows: 1fr auto;
+        min-height: 100vh;
     }
 }
