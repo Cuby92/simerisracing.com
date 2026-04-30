@@ -14,9 +14,11 @@
 
 
     .logo {
-        width: calc(1288px * 0.25);
-        height: calc(158px * 0.25);
+        width: clamp(200px, 300px, 40vw);
+        aspect-ratio: 1288 / 158;
         mask-image: url('/img/logo/logo-white.svg');
+        mask-repeat: no-repeat;
+        mask-size: cover;
         @include stdGradient();
         position: relative;
 
