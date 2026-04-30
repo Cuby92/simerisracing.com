@@ -34,21 +34,22 @@
     }
 
     .Hamburger {
-        width: 3rem;
-        height: 3rem;
+        $size: 2.5rem;
+        $thickness: 0.3rem;
+        width: $size;
+        height: $size;
         position: relative;
-        position: relative;
-        outline: 2px dotted red;
 
         *[class*="Bar"] {
             background-color: $pink;
         }
 
         .TopBar, .BottomBar {
-            width: 3rem;
-            height: 0.3rem;
+            width: $size;
+            height: $thickness;
             background: $pink;
             position: absolute;
+            border-radius: calc($thickness / 3);
         }
 
         .TopBar {
@@ -63,17 +64,19 @@
 
         *[class*='MidBar'] {
             width: 50%;
-            height: 0.3rem;
+            height: $thickness;
             position: absolute;
-            top: calc(50% - 0.15rem);
+            top: calc(50% - $thickness / 2);
         }
 
         .MidBar1 {
             left: 0;
+            border-radius: calc($thickness / 2) 0 0 calc($thickness / 3);
         }
 
         .MidBar2 {
             right: 0;
+            border-radius: 0 calc($thickness / 2) calc($thickness / 3) 0;
         }
     }
 }
