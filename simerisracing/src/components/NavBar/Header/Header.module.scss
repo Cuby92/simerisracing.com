@@ -8,25 +8,72 @@
     top: 0;
     left: 0;
     padding: 2rem;
-}
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
 
-.logo {
-    width: calc(1288px * 0.25);
-    height: calc(158px * 0.25);
-    mask-image: url('/img/logo/logo-white.svg');
-    @include stdGradient();
-    position: relative;
-    --before-opacity: 0;
 
-    &::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        opacity: var(--beforeOpacity);
-        background: linear-gradient(
-            45deg,
-            $pinkLCH,
-            lch(45.64 116.51 313.28)
-        );
+    .logo {
+        width: calc(1288px * 0.25);
+        height: calc(158px * 0.25);
+        mask-image: url('/img/logo/logo-white.svg');
+        @include stdGradient();
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: var(--beforeOpacity);
+            background: linear-gradient(
+                45deg,
+                $pinkLCH,
+                lch(45.64 116.51 313.28)
+            );
+        }
+    }
+
+    .Hamburger {
+        width: 3rem;
+        height: 3rem;
+        position: relative;
+        position: relative;
+        outline: 2px dotted red;
+
+        *[class*="Bar"] {
+            background-color: $pink;
+        }
+
+        .TopBar, .BottomBar {
+            width: 3rem;
+            height: 0.3rem;
+            background: $pink;
+            position: absolute;
+        }
+
+        .TopBar {
+            top: 0;
+            left: 0;
+        }
+
+        .BottomBar {
+            left: 0;
+            bottom: 0;
+        }
+
+        *[class*='MidBar'] {
+            width: 50%;
+            height: 0.3rem;
+            position: absolute;
+            top: calc(50% - 0.15rem);
+        }
+
+        .MidBar1 {
+            left: 0;
+        }
+
+        .MidBar2 {
+            right: 0;
+        }
     }
 }

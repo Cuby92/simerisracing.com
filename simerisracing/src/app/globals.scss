@@ -35,6 +35,13 @@ $blueLCH: lch(29.57 131.2014 301.3643);
             color: #ff55ff;
         }
     }
+
+    .btn {
+        outline: none;
+        border: none;
+        background: none;
+        padding: none;
+    }
 }
 
 @layer layout {

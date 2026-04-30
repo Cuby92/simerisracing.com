@@ -21,13 +21,5 @@
         text-underline-offset: 1rem;
         font-size: 1.2rem;
         font-family: Arial;
-        transition: 
-            text-underline-offset 0.3s ease-in-out,
-            text-decoration-color 0.3s ease-in-out;
-
-        &:hover {
-            text-underline-offset: 0.1rem;
-            text-decoration-color: #000000;
-        }
     }
 }
