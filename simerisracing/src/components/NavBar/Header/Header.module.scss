@@ -50,6 +50,7 @@
             background: $pink;
             position: absolute;
             border-radius: calc($thickness / 3);
+            transform-origin: 0 50%;
         }
 
         .TopBar {
@@ -71,12 +72,33 @@
 
         .MidBar1 {
             left: 0;
-            border-radius: calc($thickness / 2) 0 0 calc($thickness / 3);
+            border-radius: calc($thickness / 3) 0 0 calc($thickness / 3);
+            transform-origin: 0 50%;
         }
 
         .MidBar2 {
             right: 0;
-            border-radius: 0 calc($thickness / 2) calc($thickness / 3) 0;
+            border-radius: 0 calc($thickness / 3) calc($thickness / 3) 0;
+            transform-origin: 100% 50%;
+        }
+
+        @supports (corner-shape: bevel) {
+            .TopBar, .BottomBar {
+                corner-shape: bevel;
+                border-radius: calc($thickness / 2) 0;
+            }
+
+            *[class*='MidBar'] {
+                corner-shape: bevel;
+            }
+
+            .MidBar1 {
+                border-radius: calc($thickness / 2) 0 0 0;
+            }
+
+            .MidBar2 {
+                border-radius: 0 0 calc($thickness / 2) 0;
+            }
         }
     }
 }

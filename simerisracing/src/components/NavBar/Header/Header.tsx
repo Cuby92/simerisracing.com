@@ -13,6 +13,13 @@ function Header() {
     function toggleHamburger() {
         setHamburgerState(prev => !prev);
     }
+
+    const [supportsCornerShape, setSupportsCornerShape] = useState(false);
+    useEffect(() => {
+        if (typeof CSS != 'undefined') {
+            setSupportsCornerShape(CSS.supports('corner-shape', 'bevel'));
+        }
+    }, []);
     
     const hamburger = useRef<HTMLButtonElement>(null);
     const topBar = useRef<HTMLDivElement>(null);
@@ -33,15 +40,12 @@ function Header() {
         if (topBar.current && bottomBar.current && midBar1.current && midBar2.current && typeof window != 'undefined') {
             if (!onTl.current) {
                 onTl.current = gsap.timeline({ paused: true })
-                    .set([topBar.current, bottomBar.current], {
-                        transformOrigin: '0 50%'
-                    })
-                    .set(midBar1.current, {
-                        transformOrigin: '0 50%'
-                    })
-                    .set(midBar2.current, {
-                        transformOrigin: '100% 50%'
-                    })
+                    .to([topBar.current, bottomBar.current], {
+                        borderRadius: rem(hamburgerLineThickness / (supportsCornerShape ? 3 : 2)),
+                        duration: 1,
+                        ease: 'power4.inOut',
+                        easeReverse: true
+                    }, 0)
                     .to(midBar1.current, {
                         x: '-100%',
                         y: '50%',
@@ -49,43 +53,54 @@ function Header() {
                         height: rem(hamburgerLineThickness / 2),
                         width: '30%',
                         duration: 0.25,
-                        ease: 'power4.out'
-                    })
+                        ease: 'power4.in',
+                        easeReverse: true
+                    }, 0)
                     .to(midBar2.current, {
                         x: '100%',
                         y: '50%',
                         borderRadius: rem(hamburgerLineThickness / 3),
                         height: rem(hamburgerLineThickness / 2),
                         width: '30%',
-                        duration: 0.2,
-                        ease: 'power4.out'
-                    }, '-=90%')
+                        duration: 0.25,
+                        ease: 'power4.in',
+                        easeReverse: true
+                    }, '<+25%')
                     .to(hamburger.current, {
                         rotate: 90,
                         duration: 0.3,
-                        ease: 'easeInOut'
-                    }, '-=60%')
+                        ease: 'power2.inOut',
+                        easeReverse: true
+                    }, '<+50%')
                     .to(topBar.current, {
                         rotate: 45,
-                        duration: 0.3
-                    })
+                        duration: 0.3,
+                        ease: 'power4.inOut',
+                        easeReverse: true
+                    }, '<+80%')
                     .to(bottomBar.current, {
                         rotate: -45,
-                        duration: 0.3
-                    }, '-=70%')
+                        duration: 0.3,
+                        ease: 'power3.inOut',
+                        easeReverse: true
+                    }, '<+30%')
                     .to(topBar.current, {
                         x: rem(hamburgerLineThickness * 1.2),
                         y: rem(hamburgerLineThickness / 2 * 1.2),
-                        duration: 0.3
-                    }, '-=30%')
+                        duration: 0.3,
+                        ease: 'power1.inOut',
+                        easeReverse: true
+                    }, '<+50%')
                     .to(bottomBar.current, {
                         x: rem(hamburgerLineThickness * 1.2),
                         y: rem(-hamburgerLineThickness / 2 * 1.2),
-                        duration: 0.3
-                    }, '-=100%')
+                        duration: 0.3,
+                        ease: 'power2.inOut',
+                        easeReverse: true
+                    }, '<+5%');
             }
             if (hamburgerState) {
-                onTl.current.time(0).play();
+                onTl.current.restart();
             } else {
                 onTl.current.reverse();
             }
