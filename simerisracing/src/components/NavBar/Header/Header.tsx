@@ -41,7 +41,7 @@ function Header() {
             if (!onTl.current) {
                 onTl.current = gsap.timeline({ paused: true })
                     .to([topBar.current, bottomBar.current], {
-                        borderRadius: rem(hamburgerLineThickness / (supportsCornerShape ? 3 : 2)),
+                        borderRadius: rem(hamburgerLineThickness / (supportsCornerShape ? 2 : 3)),
                         duration: 1,
                         ease: 'power4.inOut',
                         easeReverse: true
