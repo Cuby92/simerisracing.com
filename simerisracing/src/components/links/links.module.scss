@@ -1,0 +1,20 @@
+.footerLink {
+    color: #ccc;
+    background: linear-gradient(100deg, #aaf, #fff, #aaf);
+    background-size: 200% 100%;
+    background-position: var(--cursorX) 50%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    position: relative;
+    --underlineWidth: 0;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: -0.1rem;
+        left: 0;
+        width: var(--underlineWidth);
+        height: 1.5px;
+        background: white;
+    }
+}
