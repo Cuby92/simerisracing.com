@@ -53,3 +53,9 @@ $blueLCH: lch(29.57 131.2014 301.3643);
         min-height: 100vh;
     }
 }
+
+#main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

@@ -4,7 +4,9 @@ const s = styles;
 
 function Home() {
   return (
-    <></>
+    <>
+      <h1 className={s.h1}>Page under construction...</h1>
+    </>
   );
 }
 
