@@ -8,14 +8,14 @@
     justify-content: center;
     align-items: center;
 
-    background-size: 200% 100% !important;
+    background-size: 400% 100% !important;
     background: linear-gradient(
         90deg,
         $pinkLCH,
         $blueLCH,
         $pinkLCH
     );
-    animation: bgGradientFlow 15s linear infinite;
+    animation: bgGradientFlow 60s linear infinite;
 
     .nav {
         width: 100%;
@@ -39,8 +39,8 @@
 
 @keyframes bgGradientFlow {
     from {
-        background-position: 100% 50%;
+        background-position: 400% 50%;
     } to {
-        background-position: -100% 50%;
+        background-position: -400% 50%;
     }
 }
