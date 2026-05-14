@@ -49,7 +49,7 @@ $blueLCH: lch(29.57 131.2014 301.3643);
     #mainBody {
         display: grid;
         width: 100%;
-        grid-template-rows: 1fr auto;
+        grid-template-rows: min(100svh) auto;
         min-height: 100vh;
     }
 }
