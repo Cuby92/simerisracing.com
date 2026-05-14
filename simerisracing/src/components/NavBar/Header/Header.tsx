@@ -111,8 +111,7 @@ function Header() {
         <header className={s.Header}>
             <motion.a 
                 className={s.logo} href="/" 
-                whileHover={{ 
-                    scale: 1.01, 
+                whileHover={{
                     '--beforeOpacity': 1, 
                     transition: { duration: 0.4, ease: 'easeOut' }
                 }}
