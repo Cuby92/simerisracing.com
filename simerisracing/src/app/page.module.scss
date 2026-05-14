@@ -2,6 +2,7 @@
 
 .h1 {
     font-size: 7vw;
+    color: black;
     font-family: var(--raleway), Arial;
     font-weight: 100;
     width: 100%;
@@ -13,4 +14,9 @@
         1px  1px  3px $pink,
         1px  1px  3px $pink,
         1px  1px  3px $pink;
+}
+
+*::selection {
+    background: $pink;
+    color: black;
 }
