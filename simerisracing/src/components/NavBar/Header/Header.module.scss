@@ -18,7 +18,7 @@
         aspect-ratio: 1288 / 158;
         mask-image: url('/img/logo/logo-white.svg');
         mask-repeat: no-repeat;
-        mask-size: cover;
+        mask-size: 99%;
         @include stdGradient();
         position: relative;
 
