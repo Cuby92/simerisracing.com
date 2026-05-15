@@ -62,3 +62,8 @@ $blueLCH: lch(29.57 131.2014 301.3643);
     background-size: 5vw;
     background-repeat: repeat;
 }
+
+:focus-visible {
+    outline: 2px solid $pink !important;
+    outline-offset: 2px;
+}
