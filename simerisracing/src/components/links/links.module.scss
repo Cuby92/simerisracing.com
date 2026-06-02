@@ -1,3 +1,5 @@
+@import '../../app/globals.scss';
+
 .footerLink {
     color: #ccc;
     background: linear-gradient(100deg, #aaf, #fff, #aaf);
@@ -16,5 +18,30 @@
         width: var(--underlineWidth);
         height: 1.5px;
         background: white;
+    }
+}
+
+.sidebarLink {
+    color: white;
+    font-size: 1.2rem;
+    --underlineWidth: 0;
+    text-decoration: none;
+    position: relative;
+    display: inline-block;
+    width: max-content;
+    letter-spacing: 0.3rem;
+    text-transform: uppercase;
+    font-family: var(--roboto-flex), Arial, sans-serif;
+    transition: font-style 0.3s ease-in-out;
+    font-weight: 100;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: -0.3rem;
+        left: 0;
+        width: var(--underlineWidth);
+        height: 0.2rem;
+        @include stdGradient;
     }
 }
