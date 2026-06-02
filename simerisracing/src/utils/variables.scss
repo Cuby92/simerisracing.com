@@ -1,0 +1,13 @@
+$pink: #ff00ff;
+$blue: #0000ff;
+
+$pinkLCH: lch(60.17 111.41 327.1);
+$blueLCH: lch(29.57 131.2014 301.3643);
+
+@mixin stdGradient($angle: 45deg) {
+    background: linear-gradient(
+        $angle,
+        $pinkLCH,
+        $blueLCH
+    );
+}
