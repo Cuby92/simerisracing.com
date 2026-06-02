@@ -103,6 +103,10 @@ function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }
                         <SubcategoryLink className={s.link} href="/products/panther-hp"><span style={{ fontWeight: 400 }}>PANTHER</span>HP</SubcategoryLink>
                     </nav>
 
+                    <section className={`${s.About} ${s.subcategory}`} style={{ opacity: activeLink === 3 ? 1 : 0, pointerEvents: activeLink === 3 ? 'auto' : 'none' }}>
+                        <p>SIMERIS RACING builds dependable sim racing gear designed by racers, for racers. We focus on <strong>practical engineering, premium quality</strong>, and <strong>long-term reliability</strong> to create hardware you can <strong>trust</strong> every time you race.</p>
+                    </section>
+
                     <section className={`${s.ContactInfo} ${s.subcategory}`} style={{ opacity: activeLink === 4 ? 1 : 0, pointerEvents: activeLink === 4 ? 'auto' : 'none' }}>
                         <a className={`${s.IG} ${s.item}`} href="https://www.instagram.com/simerisracing/" target="_blank">
                             <div className={s.icon}></div>
