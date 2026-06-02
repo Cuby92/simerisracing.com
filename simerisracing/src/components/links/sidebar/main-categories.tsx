@@ -1,21 +1,21 @@
-import styles from './links.module.scss';
-import { LinkProps } from './functions';
+import styles from './../links.module.scss';
+import { LinkProps } from '../functions';
 import Link from 'next/link';
 import { motion } from 'motion/react';
 
 const s = styles;
 
-interface SidebarLinkProps extends LinkProps {
+interface Props extends LinkProps {
     onMouseEnter?: () => void;
 }
 
-function SidebarLink({ children, href, className, active = false, visited = false, onMouseEnter } : SidebarLinkProps) {
+function MainCategoryLink({ children, href, className, active = false, onMouseEnter } : Props) {
     const MotionLink = motion.create(Link);
 
     return (
         <MotionLink
             href={href}
-            className={`${className} ${s.sidebarLink}`}
+            className={`${className} ${s.mainCategoryLink}`}
             style={ active ? { x: '2.25rem', scale: 1.01, fontWeight: 300 } : {} }
             onMouseEnter={onMouseEnter}
         >
@@ -24,4 +24,5 @@ function SidebarLink({ children, href, className, active = false, visited = fals
     );
 }
 
-export default SidebarLink;
+export default MainCategoryLink;
+

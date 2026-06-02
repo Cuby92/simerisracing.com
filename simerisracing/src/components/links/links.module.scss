@@ -21,10 +21,9 @@
     }
 }
 
-.sidebarLink {
+.mainCategoryLink, .subcategoryLink {
     color: white;
     font-size: 1.2rem;
-    --underlineWidth: 0;
     text-decoration: none;
     position: relative;
     display: inline-block;
@@ -33,4 +32,23 @@
     text-transform: uppercase;
     font-family: var(--raleway), Arial, sans-serif;
     font-weight: 100;
+}
+
+.subcategoryLink {
+    --underlineWidth: 0;
+
+    &:hover {
+         --underlineWidth: 100%;   
+    }
+
+    &::after {
+        content: '';
+        height: 2px;
+        width: var(--underlineWidth);
+        @include stdGradient;
+        position: absolute;
+        left: 0;
+        bottom: -0.2rem;
+        transition: width 0.3s ease-out;
+    }
 }

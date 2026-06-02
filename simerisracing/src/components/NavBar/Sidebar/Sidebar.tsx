@@ -1,7 +1,8 @@
 'use client';
 
 import styles from './Sidebar.module.scss';
-import SidebarLink from '@/components/links/sidebar';
+import MainCategoryLink from '@/components/links/sidebar/main-categories';
+import SubcategoryLink from '@/components/links/sidebar/subcategories';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Image from 'next/image';
@@ -78,17 +79,17 @@ function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }
         <div className={s.Sidebar} style={{ paddingTop: headerHeight }} onMouseLeave={ () => setActive(0) }>
             <div className={s.section}>
                 <nav className={s.MainCategories}>
-                    <SidebarLink className={s.link} onMouseEnter={ () => setActive(1)} active={activeLink === 1} href='/'        >Home</SidebarLink>
-                    <SidebarLink className={s.link} onMouseEnter={ () => setActive(2)} active={activeLink === 2} href="/products">Products</SidebarLink>
-                    <SidebarLink className={s.link} onMouseEnter={ () => setActive(3)} active={activeLink === 3} href="/about"   >About</SidebarLink>
-                    <SidebarLink className={s.link} onMouseEnter={ () => setActive(4)} active={activeLink === 4} href="/contact" >Contact</SidebarLink>
+                    <MainCategoryLink className={s.link} onMouseEnter={ () => setActive(1)} active={activeLink === 1} href='/'        >Home</MainCategoryLink>
+                    <MainCategoryLink className={s.link} onMouseEnter={ () => setActive(2)} active={activeLink === 2} href="/products">Products</MainCategoryLink>
+                    <MainCategoryLink className={s.link} onMouseEnter={ () => setActive(3)} active={activeLink === 3} href="/about"   >About</MainCategoryLink>
+                    <MainCategoryLink className={s.link} onMouseEnter={ () => setActive(4)} active={activeLink === 4} href="/contact" >Contact</MainCategoryLink>
                 </nav>
             </div>
 
             <div className={s.divider}></div>
 
             <div className={s.section}>
-                <nav className={s.Subcategories}>
+                <div className={s.Subcategories}>
                     <Image 
                         src="/img/logo/icon-gradient.svg" 
                         alt="Icon" 
@@ -97,7 +98,10 @@ function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }
                         className={s.Icon}
                         style={{ opacity: activeLink === 0 ? 0.2 : 0.15, filter: activeLink === 0 ? 'grayscale(0)' : 'grayscale(100%)' }}
                     />
-                </nav>
+                    <nav className={`${s.ProductsCategories} ${s.subcategory}`} style={{ opacity: activeLink === 2 ? 1 : 0, pointerEvents: activeLink === 2 ? 'auto' : 'none' }}>
+                        <SubcategoryLink className={s.link} href="/products/panther-hp"><span style={{ fontWeight: 400 }}>PANTHER</span>HP</SubcategoryLink>
+                    </nav>
+                </div>
             </div>
         </div>
     );
