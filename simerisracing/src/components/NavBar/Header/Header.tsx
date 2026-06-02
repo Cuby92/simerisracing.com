@@ -8,11 +8,21 @@ import { useGSAP } from '@gsap/react';
 
 const s = styles;
 
-function Header({ onSidebarToggle, ref }: { onSidebarToggle: (open: boolean) => void, ref: React.RefObject<HTMLElement | null> }) {
+interface Props {
+    setSidebarOpen: (open: boolean) => void,
+    ref: React.RefObject<HTMLElement | null>,
+    sidebarOpen: boolean
+}
+
+function Header({ setSidebarOpen, ref, sidebarOpen } : Props) {
     const [hamburgerState, setHamburgerState] = useState(false);
     function toggleHamburger() {
         setHamburgerState(prev => !prev);
     }
+
+    useEffect(() => {
+        setHamburgerState(sidebarOpen);
+    }, [sidebarOpen])
 
     const [supportsCornerShape, setSupportsCornerShape] = useState(false);
     useEffect(() => {
@@ -22,8 +32,8 @@ function Header({ onSidebarToggle, ref }: { onSidebarToggle: (open: boolean) => 
     }, []);
 
     useEffect(() => {
-        onSidebarToggle(hamburgerState);
-    }, [hamburgerState, onSidebarToggle]);
+        setSidebarOpen(hamburgerState);
+    }, [hamburgerState, setSidebarOpen]);
 
     const hamburger = useRef<HTMLButtonElement>(null);
     const topBar = useRef<HTMLDivElement>(null);
