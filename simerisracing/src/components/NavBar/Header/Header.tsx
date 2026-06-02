@@ -8,7 +8,7 @@ import { useGSAP } from '@gsap/react';
 
 const s = styles;
 
-function Header() {
+function Header({ onSidebarToggle, ref }: { onSidebarToggle: (open: boolean) => void, ref: React.RefObject<HTMLElement | null> }) {
     const [hamburgerState, setHamburgerState] = useState(false);
     function toggleHamburger() {
         setHamburgerState(prev => !prev);
@@ -20,7 +20,11 @@ function Header() {
             setSupportsCornerShape(CSS.supports('corner-shape', 'bevel'));
         }
     }, []);
-    
+
+    useEffect(() => {
+        onSidebarToggle(hamburgerState);
+    }, [hamburgerState, onSidebarToggle]);
+
     const hamburger = useRef<HTMLButtonElement>(null);
     const topBar = useRef<HTMLDivElement>(null);
     const midBar1 = useRef<HTMLDivElement>(null);
@@ -108,7 +112,7 @@ function Header() {
     }, { dependencies: [hamburgerState]});
 
     return (
-        <header className={s.Header}>
+        <header className={s.Header} id="Header" ref={ref}>
             <motion.a 
                 className={s.logo} href="/" 
                 whileHover={{
