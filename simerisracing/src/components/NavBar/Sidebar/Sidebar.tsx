@@ -69,7 +69,7 @@ function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }
                         width={50} 
                         height={50} 
                         className={s.Icon}
-                        style={{ opacity: activeLink === 0 ? 0.5 : 0.2 }}
+                        style={{ opacity: activeLink === 0 ? 0.2 : 0.15, filter: activeLink === 0 ? 'grayscale(0)' : 'grayscale(100%)' }}
                     />
                 </nav>
             </div>

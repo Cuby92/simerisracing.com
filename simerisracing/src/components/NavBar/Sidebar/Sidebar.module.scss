@@ -29,8 +29,11 @@
 
     .Icon {
         width: 100%;
+        transform: scale(1.5);
         height: auto;
         opacity: 0.3;
-        transition: opacity 0.4s ease-in-out;
+        transition: 
+            opacity 0.6s ease-in-out,
+            filter 0.8s ease-in-out;
     }
 }
