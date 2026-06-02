@@ -51,7 +51,7 @@ function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }
     }
 
     return (
-        <div className={s.Sidebar} style={{ paddingTop: headerHeight }}>
+        <div className={s.Sidebar} style={{ paddingTop: headerHeight }} onMouseLeave={ () => setActive(0) }>
             <div className={s.section}>
                 <nav className={s.MainCategories}>
                     <SidebarLink onMouseEnter={ () => setActive(1)} active={activeLink === 1} href='/'        >Home</SidebarLink>
@@ -68,7 +68,8 @@ function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }
                         alt="Icon" 
                         width={50} 
                         height={50} 
-                        className={s.Icon} 
+                        className={s.Icon}
+                        style={{ opacity: activeLink === 0 ? 0.5 : 0.2 }}
                     />
                 </nav>
             </div>
