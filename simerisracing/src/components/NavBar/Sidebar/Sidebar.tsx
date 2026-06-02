@@ -61,6 +61,8 @@ function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }
                 </nav>
             </div>
 
+            <div className={s.divider}></div>
+
             <div className={s.section}>
                 <nav className={s.Subcategories}>
                     <Image 

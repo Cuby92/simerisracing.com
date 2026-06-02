@@ -36,4 +36,15 @@
             opacity 0.6s ease-in-out,
             filter 0.8s ease-in-out;
     }
+
+    .divider {
+        position: absolute;
+        left: 50%;
+        top: 37%;
+        transform: translateX(-50%);
+        width: 2px;
+        height: 50%;
+        background: #00fa;
+        filter: blur(1px);
+    }
 }
