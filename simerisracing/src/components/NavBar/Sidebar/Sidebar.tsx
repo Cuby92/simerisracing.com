@@ -96,11 +96,27 @@ function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }
                         width={50} 
                         height={50} 
                         className={s.Icon}
-                        style={{ opacity: activeLink === 0 ? 0.2 : 0.15, filter: activeLink === 0 ? 'grayscale(0)' : 'grayscale(100%)' }}
+                        style={{ opacity: activeLink < 2 ? 0.3 : 0.2 }}
                     />
+
                     <nav className={`${s.ProductsCategories} ${s.subcategory}`} style={{ opacity: activeLink === 2 ? 1 : 0, pointerEvents: activeLink === 2 ? 'auto' : 'none' }}>
                         <SubcategoryLink className={s.link} href="/products/panther-hp"><span style={{ fontWeight: 400 }}>PANTHER</span>HP</SubcategoryLink>
                     </nav>
+
+                    <section className={`${s.ContactInfo} ${s.subcategory}`} style={{ opacity: activeLink === 4 ? 1 : 0, pointerEvents: activeLink === 4 ? 'auto' : 'none' }}>
+                        <a className={`${s.IG} ${s.item}`} href="https://www.instagram.com/simerisracing/" target="_blank">
+                            <div className={s.icon}></div>
+                            <p className={s.caption}>@simerisracing</p>
+                        </a>
+                        <a className={`${s.Mail} ${s.item}`} href="mailto:shop@simerisracing.com">
+                            <div className={s.icon}></div>
+                            <p className={s.caption}>shop@simerisracing.com</p>
+                        </a>
+                        <a className={`${s.DC} ${s.item}`} href="https://discord.gg/YmfTp5R3Jd" target="_blank">
+                            <div className={s.icon}></div>
+                            <p className={s.caption}>Join Our Discord Server</p>
+                        </a>
+                    </section>
                 </div>
             </div>
         </div>
