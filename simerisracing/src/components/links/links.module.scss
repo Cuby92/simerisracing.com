@@ -31,17 +31,9 @@
     width: max-content;
     letter-spacing: 0.3rem;
     text-transform: uppercase;
-    font-family: var(--roboto-flex), Arial, sans-serif;
-    transition: font-style 0.3s ease-in-out;
+    font-family: var(--raleway), Arial, sans-serif;
+    transition: 
+        transform 0.5s ease-in-out,
+        font-weight 0.5s ease-in-out;
     font-weight: 100;
-    
-    &::after {
-        content: '';
-        position: absolute;
-        bottom: -0.3rem;
-        left: 0;
-        width: var(--underlineWidth);
-        height: 0.2rem;
-        @include stdGradient;
-    }
 }

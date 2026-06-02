@@ -5,6 +5,7 @@ import SidebarLink from '@/components/links/sidebar';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import Image from 'next/image';
+import { useState } from 'react';
 
 const s = styles;
 
@@ -27,14 +28,36 @@ function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }
         }
     }, { dependencies: [open] });
 
+    const [activeLink, setActiveLink] = useState(0);
+
+    function setActive(link: number) {
+        switch (link) {
+            case 1:
+                setActiveLink(1);
+                break;
+            case 2:
+                setActiveLink(2);
+                break;
+            case 3:
+                setActiveLink(3);
+                break;
+            case 4:
+                setActiveLink(4);
+                break;
+            default:
+                setActiveLink(0);
+                break;
+        }
+    }
+
     return (
         <div className={s.Sidebar} style={{ paddingTop: headerHeight }}>
             <div className={s.section}>
                 <nav className={s.MainCategories}>
-                    <SidebarLink href='/'>Home</SidebarLink>
-                    <SidebarLink href="/products">Products</SidebarLink>
-                    <SidebarLink href="/about">About</SidebarLink>
-                    <SidebarLink href="/contact">Contact</SidebarLink>
+                    <SidebarLink onMouseEnter={ () => setActive(1)} active={activeLink === 1} href='/'        >Home</SidebarLink>
+                    <SidebarLink onMouseEnter={ () => setActive(2)} active={activeLink === 2} href="/products">Products</SidebarLink>
+                    <SidebarLink onMouseEnter={ () => setActive(3)} active={activeLink === 3} href="/about"   >About</SidebarLink>
+                    <SidebarLink onMouseEnter={ () => setActive(4)} active={activeLink === 4} href="/contact" >Contact</SidebarLink>
                 </nav>
             </div>
 
