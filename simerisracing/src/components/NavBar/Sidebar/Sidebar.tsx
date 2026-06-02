@@ -13,10 +13,34 @@ function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }
     useGSAP(() => {
         if (typeof window != 'undefined') {
             if (open) {
+                gsap.set(`.${s.MainCategories} .${s.link}`, { 
+                    transition: 'none',
+                });
                 gsap.to('.' + s.Sidebar, {
                     top: 0,
                     duration: 1,
                     ease: 'back.out(1)'
+                });
+                gsap.fromTo(`.${s.MainCategories} .${s.link}`, {
+                    opacity: 0,
+                    x: -30,
+                }, {
+                    opacity: 1,
+                    duration: 0.5,
+                    delay: 0.5,
+                    stagger: 0.1,
+                    x: 0,
+                    ease: 'power1.out',
+                });
+                gsap.from(`.${s.Sidebar} .${s.divider}`, {
+                    duration: 0.5,
+                    delay: 1,
+                    height: 0
+                });
+                gsap.set(`.${s.MainCategories} .${s.link}`, { 
+                    transition: 'transform 0.5s ease-in-out, font-weight 0.5s ease-in-out',
+                    delay: 1.4,
+                    ease: 'power4.out'
                 });
             } else {
                 gsap.to('.' + s.Sidebar, {
@@ -54,10 +78,10 @@ function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }
         <div className={s.Sidebar} style={{ paddingTop: headerHeight }} onMouseLeave={ () => setActive(0) }>
             <div className={s.section}>
                 <nav className={s.MainCategories}>
-                    <SidebarLink onMouseEnter={ () => setActive(1)} active={activeLink === 1} href='/'        >Home</SidebarLink>
-                    <SidebarLink onMouseEnter={ () => setActive(2)} active={activeLink === 2} href="/products">Products</SidebarLink>
-                    <SidebarLink onMouseEnter={ () => setActive(3)} active={activeLink === 3} href="/about"   >About</SidebarLink>
-                    <SidebarLink onMouseEnter={ () => setActive(4)} active={activeLink === 4} href="/contact" >Contact</SidebarLink>
+                    <SidebarLink className={s.link} onMouseEnter={ () => setActive(1)} active={activeLink === 1} href='/'        >Home</SidebarLink>
+                    <SidebarLink className={s.link} onMouseEnter={ () => setActive(2)} active={activeLink === 2} href="/products">Products</SidebarLink>
+                    <SidebarLink className={s.link} onMouseEnter={ () => setActive(3)} active={activeLink === 3} href="/about"   >About</SidebarLink>
+                    <SidebarLink className={s.link} onMouseEnter={ () => setActive(4)} active={activeLink === 4} href="/contact" >Contact</SidebarLink>
                 </nav>
             </div>
 
