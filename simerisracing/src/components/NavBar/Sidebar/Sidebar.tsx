@@ -10,7 +10,13 @@ import { useState } from 'react';
 
 const s = styles;
 
-function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }) {
+interface Props {
+    open: boolean;
+    headerHeight: number;
+    setSidebarOpen: (open: boolean) => void;
+}
+
+function Sidebar({ open, headerHeight, setSidebarOpen } : Props) {
     useGSAP(() => {
         if (typeof window != 'undefined') {
             if (open) {
@@ -79,10 +85,10 @@ function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }
         <div className={s.Sidebar} style={{ paddingTop: headerHeight }} onMouseLeave={ () => setActive(0) }>
             <div className={s.Section1}>
                 <nav className={s.MainCategories}>
-                    <MainCategoryLink className={s.link} onMouseEnter={ () => setActive(1)} active={activeLink === 1} href='/'        >Home</MainCategoryLink>
-                    <MainCategoryLink className={s.link} onMouseEnter={ () => setActive(2)} active={activeLink === 2} href="/products">Products</MainCategoryLink>
-                    <MainCategoryLink className={s.link} onMouseEnter={ () => setActive(3)} active={activeLink === 3} href="/about"   >About</MainCategoryLink>
-                    <MainCategoryLink className={s.link} onMouseEnter={ () => setActive(4)} active={activeLink === 4} href="/contact" >Contact</MainCategoryLink>
+                    <MainCategoryLink onClick={() => setSidebarOpen(false) } className={s.link} onMouseEnter={ () => setActive(1)} active={activeLink === 1} href='/'        >Home</MainCategoryLink>
+                    <MainCategoryLink onClick={() => setSidebarOpen(false) } className={s.link} onMouseEnter={ () => setActive(2)} active={activeLink === 2} href="/products">Products</MainCategoryLink>
+                    <MainCategoryLink onClick={() => setSidebarOpen(false) } className={s.link} onMouseEnter={ () => setActive(3)} active={activeLink === 3} href="/about"   >About</MainCategoryLink>
+                    <MainCategoryLink onClick={() => setSidebarOpen(false) } className={s.link} onMouseEnter={ () => setActive(4)} active={activeLink === 4} href="/contact" >Contact</MainCategoryLink>
                 </nav>
             </div>
 

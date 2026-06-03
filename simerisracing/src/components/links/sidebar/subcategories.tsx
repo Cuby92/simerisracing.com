@@ -7,9 +7,10 @@ const s = styles;
 
 interface Props extends LinkProps {
     onMouseEnter?: () => void;
+    onClick?: () => void;
 }
 
-function SubcategoryLink({ children, href, className, onMouseEnter } : Props) {
+function SubcategoryLink({ children, href, className, onMouseEnter, onClick } : Props) {
     const MotionLink = motion.create(Link);
 
     return (
@@ -17,6 +18,7 @@ function SubcategoryLink({ children, href, className, onMouseEnter } : Props) {
             href={href}
             className={`${className} ${s.subcategoryLink}`}
             onMouseEnter={onMouseEnter}
+            onClick={onClick}
         >
             { children }
         </MotionLink>

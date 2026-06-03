@@ -27,7 +27,7 @@ function NavBar() {
     return (
         <nav>
             <div className={s.Hitbox} style={ sidebarOpen ? { display: 'block' } : { display: 'none' }} onClick={() => setSidebarOpen(false)}></div>
-            <Sidebar open={sidebarOpen} headerHeight={headerHeight} />
+            <Sidebar setSidebarOpen={setSidebarOpen} open={sidebarOpen} headerHeight={headerHeight} />
             <Header setSidebarOpen={setSidebarOpen} sidebarOpen={sidebarOpen} ref={headerRef} />
         </nav>
     );
