@@ -77,7 +77,7 @@ function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }
 
     return (
         <div className={s.Sidebar} style={{ paddingTop: headerHeight }} onMouseLeave={ () => setActive(0) }>
-            <div className={s.section}>
+            <div className={s.Section1}>
                 <nav className={s.MainCategories}>
                     <MainCategoryLink className={s.link} onMouseEnter={ () => setActive(1)} active={activeLink === 1} href='/'        >Home</MainCategoryLink>
                     <MainCategoryLink className={s.link} onMouseEnter={ () => setActive(2)} active={activeLink === 2} href="/products">Products</MainCategoryLink>
@@ -88,7 +88,7 @@ function Sidebar({ open, headerHeight }: { open: boolean; headerHeight: number }
 
             <div className={s.divider}></div>
 
-            <div className={s.section}>
+            <div className={s.Section2}>
                 <div className={s.Subcategories}>
                     <Image 
                         src="/img/logo/icon-gradient.svg" 

@@ -10,7 +10,7 @@
     display: flex;
     top: -100%;
 
-    .section {
+    [class*="Section"] {
         width: 50%;
         padding: 1rem;
         height: 300px;
@@ -122,5 +122,20 @@
         font-family: var(--raleway);
         letter-spacing: 0.1rem;
         line-height: 1.5rem;
+    }
+}
+
+@media (max-width: 1079px) {
+    .Section2, .divider {
+        display: none !important;
+    }
+
+    .Section1 {
+        width: 100% !important;
+        
+        .link {
+            width: 100%;
+            text-align: center;
+        }
     }
 }
