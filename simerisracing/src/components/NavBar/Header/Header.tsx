@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
+import Link from 'next/link';
 
 const s = styles;
 
@@ -121,16 +122,18 @@ function Header({ setSidebarOpen, ref, sidebarOpen } : Props) {
         }
     }, { dependencies: [hamburgerState]});
 
+    const MotionLink = motion.create(Link);
+
     return (
         <header className={s.Header} id="Header" ref={ref}>
-            <motion.a 
+            <MotionLink 
                 className={s.logo} href="/" 
                 whileHover={{
                     '--beforeOpacity': 1, 
                     transition: { duration: 0.4, ease: 'easeOut' }
                 }}
                 transition={{ duration: 0.4, ease: 'easeOut' }}>
-            </motion.a>
+            </MotionLink>
 
             <button className={`${s.Hamburger} ${s.btn} btn`} onClick={toggleHamburger} ref={hamburger}>
                 <div className={s.TopBar}    ref={topBar}   ></div>
