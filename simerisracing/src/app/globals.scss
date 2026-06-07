@@ -37,26 +37,43 @@
     #mainBody {
         display: grid;
         width: 100%;
-        grid-template-rows: min(100svh) auto;
+        grid-template-rows: minmax(100svh, auto) auto;
         min-height: 100vh;
     }
 }
 
-#main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-image: url('/img/patterns/carbon-tile.png');
-    background-size: 5vw;
-    background-repeat: repeat;
-}
+@layer main {
+    * {
+        scroll-behavior: smooth;
+    }
+    
+    html {
+        font-family: var(--poppins);
+        font-weight: 300;
+    }
 
-:focus-visible {
-    outline: 2px solid $pink !important;
-    outline-offset: 2px;
-}
+    #main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url('/img/patterns/carbon-tile.png');
+        background-size: 5vw;
+        background-repeat: repeat;
+        flex-wrap: wrap;
+    }
 
-*::selection {
-    background: $pink;
-    color: black;
+    :focus-visible {
+        outline: 2px solid $pink !important;
+        outline-offset: 2px;
+    }
+
+    *::selection {
+        background: $pink;
+        color: black;
+    }
+
+    .page {
+        width: 100%;
+        min-height: 100svh;
+    }
 }
