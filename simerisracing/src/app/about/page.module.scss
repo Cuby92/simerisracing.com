@@ -1,0 +1,17 @@
+@use './../../utils/variables.scss' as *;
+
+.h1 {
+    font-size: 7vw;
+    color: black;
+    font-family: var(--raleway), Arial;
+    font-weight: 100;
+    width: 100%;
+    text-align: center;
+    text-shadow: 
+        -1px -1px 3px $blue,
+        -1px -1px 3px $blue,
+        -1px -1px 3px $blue,
+        1px  1px  3px $pink,
+        1px  1px  3px $pink,
+        1px  1px  3px $pink;
+}
