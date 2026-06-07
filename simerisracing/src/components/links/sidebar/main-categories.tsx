@@ -21,7 +21,7 @@ function MainCategoryLink({ children, href, className, active = false, onMouseEn
             onMouseEnter={onMouseEnter}
             onClick={onClick}
         >
-            { active ? <span style={{ color: '#f0f', transition: 'color 0.5s ease-in-out' }}>//</span> : <span style={{ color: '#f0f0', transition: 'color 0.5s ease-in-out' }}>//</span> } { children }
+            { active ? <span style={{ color: '#f0f', transition: 'color 0.5s ease-in' }}>//</span> : <span style={{ color: '#f0f0', transition: 'color 0.5s ease-in-out' }}>//</span> } { children }
         </MotionLink>
     );
 }
