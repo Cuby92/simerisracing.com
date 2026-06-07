@@ -15,11 +15,6 @@ const raleway = Raleway({
   variable: '--raleway'
 });
 
-const robotoFlex = Roboto_Flex({
-  subsets: ['latin'],
-  variable: '--roboto-flex'
-});
-
 const poppins = Poppins({
   subsets: ['latin'],
   variable: '--poppins',
@@ -28,7 +23,7 @@ const poppins = Poppins({
 
 function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
-    <html className={`${raleway.variable} ${robotoFlex.className} ${poppins.variable}`} lang="en">
+    <html className={`${raleway.variable} ${poppins.variable}`} lang="en">
       <CursorCssVars />
       <body>
         <NavBar />
