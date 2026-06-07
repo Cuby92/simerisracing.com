@@ -114,7 +114,7 @@ function Sidebar({ open, headerHeight, setSidebarOpen } : Props) {
                     </section>
 
                     <section className={`${s.ContactInfo} ${s.subcategory}`} style={{ opacity: activeLink === 4 ? 1 : 0, pointerEvents: activeLink === 4 ? 'auto' : 'none' }}>
-                        <a className={`${s.IG} ${s.item}`} href="https://www.instagram.com/simerisracing/" target="_blank">
+                        <a className={`${s.IG} ${s.item}`} href="https://www.instagram.com/simeris.racing/" target="_blank">
                             <div className={s.icon}></div>
                             <p className={s.caption}>@simerisracing</p>
                         </a>
