@@ -106,7 +106,7 @@ function Sidebar({ open, headerHeight, setSidebarOpen } : Props) {
                     />
 
                     <nav className={`${s.ProductsCategories} ${s.subcategory}`} style={{ opacity: activeLink === 2 ? 1 : 0, pointerEvents: activeLink === 2 ? 'auto' : 'none' }}>
-                        <SubcategoryLink className={s.link} href="/products/panther-hp"><span style={{ fontWeight: 400 }}>PANTHER</span>HP</SubcategoryLink>
+                        <SubcategoryLink onClick={() => setSidebarOpen(false)} className={s.link} href="/products/panther-hp"><span style={{ fontWeight: 400 }}>PANTHER</span>HP</SubcategoryLink>
                     </nav>
 
                     <section className={`${s.About} ${s.subcategory}`} style={{ opacity: activeLink === 3 ? 1 : 0, pointerEvents: activeLink === 3 ? 'auto' : 'none' }}>
