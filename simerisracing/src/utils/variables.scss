@@ -11,3 +11,9 @@ $blueLCH: lch(29.57 131.2014 301.3643);
         $blueLCH
     );
 }
+
+@mixin carbonBg() {
+    background-image: url('/img/patterns/carbon-tile.png');
+    background-size: 5vw;
+    background-repeat: repeat;
+}
