@@ -33,3 +33,5 @@ function ScrollSmootherWrapper({ children } : { children: React.ReactNode }) {
         </div>
     );
 }
+
+export default ScrollSmootherWrapper;
