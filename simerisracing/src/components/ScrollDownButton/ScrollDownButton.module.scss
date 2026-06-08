@@ -1,0 +1,27 @@
+@use './../../utils/variables.scss' as *;
+
+.ScrollDownButton {
+    width: 3.5rem;
+    height: 3.5rem;
+    background-color: #a0f;
+    mask-image: url('/img/icons/arrow-down.svg');
+    mask-size: contain;
+    mask-position: 50% 50%;
+    mask-repeat: no-repeat;
+    transition: background-color 0.2s ease-in-out;
+    animation: jump 2s infinite;
+
+    &:hover {
+        background-color: $pink;
+    }
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0);
+    } 50% {
+        transform: translateY(-10%);
+    } 100% {
+        transform: translateY(0);
+    }
+}

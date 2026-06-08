@@ -1,5 +1,5 @@
 import styles from './page.module.scss';
-import ScrollDownButton from '@/components/ScrollDownButton';
+import ScrollDownButton from '@/components/ScrollDownButton/ScrollDownButton';
 import ScrollSmootherWrapper from '@/utils/gsap/ScrollSmoother';
 
 const s = styles;
