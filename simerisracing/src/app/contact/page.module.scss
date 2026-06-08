@@ -10,6 +10,11 @@
         font-size: clamp(1.1rem, 0.0846rem + 3.3846vw, 5.5rem); // 1.1rem@480px 5.5rem@2560px
         text-wrap: wrap;
         width: 100%;
+        text-shadow: 
+            0 0 10px $blue,
+            0 0 10px $blue,
+            0 0 5px $blue,
+            0 0 5px $blue;
     }
 
     .p {
