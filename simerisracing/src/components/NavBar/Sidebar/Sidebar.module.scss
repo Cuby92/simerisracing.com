@@ -5,10 +5,11 @@
     left: 0;
     width: 100%;
     background: #000a;
-    backdrop-filter: blur(4px) !important;
+    backdrop-filter: blur(6px) !important;
     -webkit-backdrop-filter: blur(4px);
     display: flex;
     top: -100%;
+    z-index: 999;
 
     [class*="Section"] {
         width: 50%;
