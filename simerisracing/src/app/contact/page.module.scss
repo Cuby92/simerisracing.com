@@ -6,3 +6,16 @@
     align-items: center;
     flex-direction: column;
 }
+
+
+.ContactOptionsSection {
+    .ContactOptions {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+
+        .cell {
+            place-self: center;
+        }
+    }
+}
