@@ -41,15 +41,11 @@ function Contact() {
                         <h3 className={s.h3}>Instagram</h3>
                         <p>Whether you want product updates, development progress, support, or just some sim racing content in your feed, we're active on Instagram.</p>
 
-                        <h4>Official</h4>
+                        <h4>Official: <a href="https://instagram.com/simeris.racing">@simeris.racing</a></h4>
                         <p>Our official company account for products announcements, updates, and news</p>
-                        <a href="https://instagram.com/simeris.racing">@simeris.racing</a>
 
-                        <h4>Founder</h4>
-                        <p>Follow for behind the scenes updates like design progress and updates.</p>
-                        <a href="https://instagram.com/cuby927">@cuby927</a>
-
-                        <p>Also feel free to contact us via the official account or my private one if you have any questions or just want to talk.</p>
+                        <h4>Founder: <a href="https://instagram.com/cuby927">@cuby927</a></h4>
+                        <p>Follow for behind the scenes updates like design progress and updates. Feel free to contact me if you have any questions or just want to talk.</p>
                     </div>
 
                     <div className={`${s.Email} ${s.cell}`}>
