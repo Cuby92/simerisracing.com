@@ -15,7 +15,7 @@ function Contact() {
 
             <section className={`${s.IntroSection} page`} id="contact_intro">
                 <p className={s.p}>SIMERIS RACING is a small team, so you're not getting bounced between departments or bots that waste your time.</p>
-                <p className={s.p}>If it's about gear, setup help, orders, or compatibility, reach out directly. We'll get back to you as fast as we can - usually within 12 hours.</p>
+                <p className={s.p}>If it's about gear, setup help, orders, or compatibility, reach out directly. We'll get back to ASAP - usually within 12 hours.</p>
                 <ScrollDownButton nextSection={'#contact_options'} />
             </section>
 
