@@ -18,6 +18,11 @@
     }
 }
 
+.IntroSection {
+    text-align: center;
+    font-size: clamp(1rem, 0.5385rem + 1.5385vw, 3rem); // 1rem@480px 3rem@2560px
+}
+
 .ContactOptionsSection {
     .ContactOptions {
         width: 100%;
