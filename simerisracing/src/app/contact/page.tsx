@@ -9,7 +9,7 @@ function Contact() {
         <>
         <section className={`${s.HeroSection} id="contact_hero" page`}>
                 <h1 className={s.h1}>Got a question? Need support? Want to talk?</h1>
-                <p>We're here. No ticket maze. No corporate nonsense. Just direct contact with people who actually know the hardware.</p>
+                <p className={s.p}>We're here. No ticket maze. No corporate nonsense. Just direct contact with people who actually know the hardware.</p>
                 <ScrollDownButton nextSection={'#contact_intro'}/>
             </section>
 

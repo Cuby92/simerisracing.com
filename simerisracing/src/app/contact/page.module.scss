@@ -5,8 +5,21 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
+    text-align: center;
 
+    .h1 {
+        font-weight: 100;
+        font-family: var(--raleway);
+        font-size: clamp(1.1rem, 0.0846rem + 3.3846vw, 5.5rem); // 1.1rem@480px 5.5rem@2560px
+        text-wrap: wrap;
+        width: 100%;
+    }
+
+    .p {
+        font-size: clamp(1rem, 0.7692rem + 0.7692vw, 2rem); // 1rem@480px 2rem@2560px
+        width: 100%;
+    }
+}
 
 .ContactOptionsSection {
     .ContactOptions {
