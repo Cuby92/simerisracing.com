@@ -73,5 +73,12 @@
     .page {
         width: 100%;
         min-height: 100svh;
+        position: relative;
+    }
+
+    .page .ScrollDownButton {
+        position: absolute;
+        bottom: 5%;
+        left: calc(50% - 3.5rem / 2);
     }
 }

@@ -9,7 +9,7 @@ function ScrollDownButton({ nextSection } : { nextSection: string }) {
     return (
         <motion.a 
             href={nextSection}
-            className={s.ScrollDownButton}
+            className={`${s.ScrollDownButton} ScrollDownButton`}
         ></motion.a>
     );
 }
