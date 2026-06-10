@@ -28,9 +28,9 @@ function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
       <CursorCssVars />
       <body>
       <NavBar />
-        <section id="mainBody">
+        <main>
             { children }
-        </section>
+        </main>
       </body>
     </html>
   );

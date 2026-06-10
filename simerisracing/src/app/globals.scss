@@ -34,7 +34,7 @@
 }
 
 @layer layout {
-    #mainBody {
+    main {
         display: grid;
         width: 100%;
         grid-template-rows: minmax(100svh, auto) auto;
@@ -52,7 +52,7 @@
         font-weight: 300;
     }
 
-    #main {
+    main {
         display: flex;
         align-items: center;
         justify-content: center;
