@@ -4,6 +4,7 @@ import Footer from "@/components/Footer/Footer";
 import CursorCssVars from '@/utils/cursorPosition';
 import { Raleway, Roboto_Flex, Poppins } from 'next/font/google';
 import { Metadata } from 'next';
+import ScrollSmootherWrapper from '@/utils/gsap/ScrollSmoother';
 
 export const metadata: Metadata = {
   title: 'SIMERIS RACING | Reliable Sim Racing Gear Built for Real Racers',
@@ -27,12 +28,14 @@ function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
       <CursorCssVars />
       <body>
         <NavBar />
-        <section id="mainBody">
-          <main id="main">
-            { children }
-          </main>
-          <Footer />
-        </section>
+        <ScrollSmootherWrapper>
+          <section id="mainBody">
+            <main id="main">
+              { children }
+            </main>
+            <Footer />
+          </section>
+        </ScrollSmootherWrapper>
       </body>
     </html>
   );

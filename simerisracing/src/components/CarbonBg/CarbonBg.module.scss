@@ -1,0 +1,11 @@
+@use './../../utils/variables.scss' as *;
+
+.bg {
+    width: 100%;
+    height: 100%;
+    @include carbonBg;
+    position: fixed;
+    inset: 0;
+    object-fit: cover;
+    z-index: -10;
+}

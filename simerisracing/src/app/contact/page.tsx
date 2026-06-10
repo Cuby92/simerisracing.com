@@ -1,14 +1,15 @@
 import styles from './page.module.scss';
 import ScrollDownButton from '@/components/ScrollDownButton/ScrollDownButton';
-import ScrollSmootherWrapper from '@/utils/gsap/ScrollSmoother';
 import StdLink from '@/components/links/std/StdLink';
+import CarbonBg from '@/components/CarbonBg/CarbonBg';
 
 const s = styles;
 
 function Contact() {
     return (
         <>
-        <section className={`${s.HeroSection} id="contact_hero" page`}>
+            <CarbonBg />
+            <section className={`${s.HeroSection} page`} id="contact_hero">
                 <h1 className={s.h1}>Got a question? Need support? Want to talk?</h1>
                 <p className={s.p}>We're here. No ticket maze. No corporate nonsense. Just direct contact with people who actually know the hardware.</p>
                 <ScrollDownButton nextSection={'#contact_intro'}/>
