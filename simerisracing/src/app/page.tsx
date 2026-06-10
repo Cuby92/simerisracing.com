@@ -9,7 +9,9 @@ function Home() {
     return (
         <ScrollSmootherWrapper>
             <CarbonBg />
-            <h1 className={s.h1}>Page under construction...</h1>
+            <div className="page">
+                <h1 className={s.h1}>Page under construction...</h1>
+            </div>
             <Footer />
         </ScrollSmootherWrapper>
     );
