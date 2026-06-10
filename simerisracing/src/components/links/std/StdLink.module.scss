@@ -1,0 +1,46 @@
+@use './../../../utils/variables.scss' as *;
+
+.Link {
+    color: white;
+    text-decoration: none;
+    text-underline-offset: 0.2rem;
+    text-decoration-color: #fff5;
+    --gradient-underline-width: 0;
+    --underline-width: 100%;
+    position: relative;
+    width: max-content;
+
+    &:hover {
+        --underline-width: 0;
+        --gradient-underline-width: 100%
+    }
+
+    &::before {
+        content: '';
+        width: var(--gradient-underline-width);
+        @include stdGradient;
+        height: 0.15rem;
+        transition: width 0.4s ease-in;
+        position: absolute;
+        left: 0;
+        bottom: -0.25rem;
+        opacity: 1;
+    }
+
+    &::after {
+        content: '';
+        width: var(--underline-width);
+        background: white;
+        opacity: 0.8;
+        position: absolute;
+        right: 0;
+        bottom: -0.1rem;
+        height: 0.1rem;
+        transition: width 0.4s ease-out;
+    }
+
+    &:visited {
+        color: #aaa;
+        text-shadow: 0 0 2px #fff5 !important;
+    }
+}

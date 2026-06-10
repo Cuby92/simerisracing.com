@@ -1,6 +1,7 @@
 import styles from './page.module.scss';
 import ScrollDownButton from '@/components/ScrollDownButton/ScrollDownButton';
 import ScrollSmootherWrapper from '@/utils/gsap/ScrollSmoother';
+import StdLink from '@/components/links/std/StdLink';
 
 const s = styles;
 
@@ -33,7 +34,7 @@ function Contact() {
                                 <li className={s.li}>Community discussions</li>
                                 <li className={s.li}>Early updates and feedback</li>
                             </ul>
-                            <strong><a href="https://discord.gg/YmfTp5R3Jd" target="_blank">Join Discord</a></strong>
+                            <strong><StdLink href="https://discord.gg/YmfTp5R3Jd" target="_blank">Join Discord</StdLink></strong>
                         </div>
                     </div>
 
@@ -45,12 +46,12 @@ function Contact() {
                             <p>Whether you want product updates, development progress, or support, we're active on Instagram.</p>
 
                             <div className={s.OfficialIG}>
-                                <h4>Official: <a href="https://instagram.com/simeris.racing" target="_blank">@simeris.racing</a></h4>
+                                <h4 className={s.h4}>Official: <StdLink href="https://instagram.com/simeris.racing" target="_blank">@simeris.racing</StdLink></h4>
                                 <p>Our official company account for products announcements, updates, and news</p>
                             </div>
 
                             <div className={s.PrivIG}>
-                                <h4>Founder: <a href="https://instagram.com/cuby927" target="_blank">@cuby927</a></h4>
+                                <h4 className={s.h4}>Founder: <StdLink href="https://instagram.com/cuby927" target="_blank">@cuby927</StdLink></h4>
                                 <p>Follow for behind the scenes content. Feel free to contact me if you have any questions or just want to talk.</p>
                             </div>
                         </div>
@@ -61,7 +62,9 @@ function Contact() {
 
                         <div className={s.content}>
                             <h3 className={s.h3}>Email</h3>
-                            <a href="mailto:shop@simerisracing.com">shop@simerisracing.com</a>
+                            <div className={s.content}>
+                                <StdLink href="mailto:shop@simerisracing.com">shop@simerisracing.com</StdLink>
+                            </div>
                         </div>
                     </div>
 
