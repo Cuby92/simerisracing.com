@@ -26,6 +26,12 @@
 .IntroSection {
     text-align: center;
     font-size: clamp(1rem, 0.5385rem + 1.5385vw, 3rem); // 1rem@480px 3rem@2560px
+    font-weight: 200;
+
+    .strong {
+        font-weight: 400;
+        color: $pink;
+    }
 }
 
 .ContactOptionsSection {
@@ -39,6 +45,10 @@
     .h4 {
         font-family: var(--poppins);
         font-weight: 500;
+    }
+
+    .strong {
+        font-weight: 600;
     }
 
     .ContactOptions {
