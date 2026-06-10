@@ -27,15 +27,10 @@ function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
     <html className={`${raleway.variable} ${poppins.variable}`} lang="en">
       <CursorCssVars />
       <body>
-        <NavBar />
-        <ScrollSmootherWrapper>
-          <section id="mainBody">
-            <main id="main">
-              { children }
-            </main>
-            <Footer />
-          </section>
-        </ScrollSmootherWrapper>
+      <NavBar />
+        <section id="mainBody">
+            { children }
+        </section>
       </body>
     </html>
   );
