@@ -2,10 +2,6 @@
 
 import styles from './ScrollDownButton.module.scss';
 import { motion } from 'motion/react';
-import { gsap } from 'gsap';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-
-gsap.registerPlugin(ScrollToPlugin);
 
 const s = styles;
 
@@ -14,10 +10,9 @@ function ScrollDownButton({ nextSection } : { nextSection: string }) {
         const targetId = nextSection.replace('#', '');
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-            gsap.to(window, {
-                scrollTo: targetElement,
-                duration: 1,
-                ease: "power2.inOut"
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
             });
         }
     };

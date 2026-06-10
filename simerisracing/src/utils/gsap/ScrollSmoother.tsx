@@ -4,10 +4,9 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
-import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 
-gsap.registerPlugin(ScrollSmoother, ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 
 function ScrollSmootherWrapper({ children } : { children: React.ReactNode }) {
     const wrapperRef = useRef<HTMLDivElement>(null);
@@ -25,25 +24,6 @@ function ScrollSmootherWrapper({ children } : { children: React.ReactNode }) {
             effects: true
         });
     });
-
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const hash = window.location.hash;
-            if (hash) {
-                const targetId = hash.replace('#', '');
-                setTimeout(() => {
-                    const targetElement = document.getElementById(targetId);
-                    if (targetElement) {
-                        gsap.to(window, {
-                            scrollTo: targetElement,
-                            duration: 1,
-                            ease: "power2.inOut"
-                        });
-                    }
-                }, 500);
-            }
-        }
-    }, []);
 
     return (
         <div ref={wrapperRef} id="smooth-wrapper" style={{ position: 'fixed', overflow: 'hidden', width: '100%', height: '100%', inset: 0 }}>
