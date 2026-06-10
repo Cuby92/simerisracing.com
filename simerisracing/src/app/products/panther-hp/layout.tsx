@@ -1,13 +1,10 @@
 import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-    title: '',
-    description: ''
-}
+import CarbonBg from '@/components/CarbonBg/CarbonBg';
 
 function Layout({ children } : { children: React.ReactNode }) {
     return (
         <>
+            <CarbonBg />
             { children }
         </>
     );

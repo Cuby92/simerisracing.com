@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollSmoother } from 'gsap/ScrollSmoother';
-import { useRef, useEffect } from 'react';
+import { useRef } from 'react';
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 
@@ -33,3 +33,5 @@ function ScrollSmootherWrapper({ children } : { children: React.ReactNode }) {
         </div>
     );
 }
+
+export default ScrollSmootherWrapper;

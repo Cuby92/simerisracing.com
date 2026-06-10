@@ -4,6 +4,7 @@ import Footer from "@/components/Footer/Footer";
 import CursorCssVars from '@/utils/cursorPosition';
 import { Raleway, Roboto_Flex, Poppins } from 'next/font/google';
 import { Metadata } from 'next';
+import ScrollSmootherWrapper from '@/utils/gsap/ScrollSmoother';
 
 export const metadata: Metadata = {
   title: 'SIMERIS RACING | Reliable Sim Racing Gear Built for Real Racers',
@@ -15,11 +16,6 @@ const raleway = Raleway({
   variable: '--raleway'
 });
 
-const robotoFlex = Roboto_Flex({
-  subsets: ['latin'],
-  variable: '--roboto-flex'
-});
-
 const poppins = Poppins({
   subsets: ['latin'],
   variable: '--poppins',
@@ -28,16 +24,18 @@ const poppins = Poppins({
 
 function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
   return (
-    <html className={`${raleway.variable} ${robotoFlex.className} ${poppins.variable}`} lang="en">
+    <html className={`${raleway.variable} ${poppins.variable}`} lang="en">
       <CursorCssVars />
       <body>
         <NavBar />
-        <section id="mainBody">
-          <main id="main">
-            { children }
-          </main>
-          <Footer />
-        </section>
+        <ScrollSmootherWrapper>
+          <section id="mainBody">
+            <main id="main">
+              { children }
+            </main>
+            <Footer />
+          </section>
+        </ScrollSmootherWrapper>
       </body>
     </html>
   );
