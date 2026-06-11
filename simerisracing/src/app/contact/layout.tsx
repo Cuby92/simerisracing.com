@@ -6,7 +6,9 @@ function Layout({ children } : { children: React.ReactNode }) {
     return (
         <ScrollSmootherWrapper>
             <CarbonBg />
-            { children }
+            <div className="pageContent">
+                { children }
+            </div>
             <Footer />
         </ScrollSmootherWrapper>
     );

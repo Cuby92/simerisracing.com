@@ -40,6 +40,10 @@
         grid-template-rows: minmax(100svh, auto) auto;
         min-height: 100vh;
     }
+
+    .pageContent {
+        padding-bottom: 10rem;
+    }
 }
 
 @layer main {

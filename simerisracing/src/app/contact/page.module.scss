@@ -54,17 +54,20 @@
     .ContactOptions {
         width: 100%;
         height: 100svh;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 1rem;
 
         .cell {
             position: relative;
-            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
+            height: auto;
+            min-height: 300px;
+            margin-inline: auto;
             
             .bgIcon {
                 position: absolute;
