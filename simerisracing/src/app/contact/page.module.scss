@@ -15,11 +15,13 @@
             0 0 10px $blue,
             0 0 5px $blue,
             0 0 5px $blue;
+        opacity: 1;
     }
 
     .p {
         font-size: clamp(1rem, 0.7692rem + 0.7692vw, 2rem); // 1rem@480px 2rem@2560px
         width: 100%;
+        opacity: 1;
     }
 }
 
@@ -30,7 +32,7 @@
 
     .strong {
         font-weight: 400;
-        color: $pink;
+        color:#f0f;
     }
 }
 
@@ -40,6 +42,7 @@
         font-family: var(--raleway);
         font-size: 1.75rem;
         margin-bottom: 0;
+        overflow: hidden;
     }
 
     .h4 {
