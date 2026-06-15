@@ -120,7 +120,7 @@ function Header({ setSidebarOpen, ref, sidebarOpen } : Props) {
                 onTl.current.reverse();
             }
         }
-    }, { dependencies: [hamburgerState]});
+    }, { dependencies: [hamburgerState] });
 
     const MotionLink = motion.create(Link);
 
