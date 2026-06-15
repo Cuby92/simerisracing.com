@@ -13,7 +13,7 @@ function ScrollSmootherWrapper({ children } : { children: React.ReactNode }) {
     const contentRef = useRef<HTMLDivElement>(null);
 
     useGSAP(() => {
-        if (typeof window === undefined) return;
+        if (typeof window === 'undefined') return;
         if (!wrapperRef.current || !contentRef.current) return;
 
         ScrollSmoother.create({
@@ -23,7 +23,7 @@ function ScrollSmootherWrapper({ children } : { children: React.ReactNode }) {
             smoothTouch: 0.1,
             effects: true
         });
-    });
+    }, { scope: wrapperRef });
 
     return (
         <div ref={wrapperRef} id="smooth-wrapper" style={{ position: 'fixed', overflow: 'hidden', width: '100%', height: '100%', inset: 0 }}>
