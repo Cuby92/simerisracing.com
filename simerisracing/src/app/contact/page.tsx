@@ -7,67 +7,50 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
+import { Heading, HeadingRef, P, PRef, Btn, BtnRef, AnyElement, AnyElementRef, Div, DivRef, Li, LiRef } from '@/utils/ref-types';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const s = styles;
-
-type Heading      = HTMLHeadingElement   | null;
-type HeadingRef   = React.RefObject<Heading>;
-
-type Paragraph    = HTMLParagraphElement | null;
-type ParagraphRef = React.RefObject<Paragraph>;
-
-type Button       = HTMLButtonElement    | null;
-type ButtonRef    = React.RefObject<Button>;
-
-type Element      = HTMLElement          | null;
-type ElementRef   = React.RefObject<Element>;
-
-type Div          = HTMLDivElement       | null;
-type DivRef       = React.RefObject<Div>;
-
-type Li           = HTMLLIElement        | null;
-type LiRef        = React.RefObject<Li>;
 
 function Contact() {
     const page = useRef<Div>(null);
 
     const heroSection: {
         h1:   HeadingRef;
-        p:   ParagraphRef;
-        page: ElementRef;
+        p:    PRef;
+        page: AnyElementRef;
     } = {
         h1:   useRef<Heading>(null),
-        p:   useRef<Paragraph>(null),
-        page: useRef<Element>(null)
+        p:    useRef<P>(null),
+        page: useRef<AnyElement>(null)
     };
 
     const introSection: {
-        ps:     Array<ParagraphRef>;
-        page:   ElementRef;
-        strong: Array<ElementRef>;
+        ps:     Array<PRef>;
+        page:   AnyElementRef;
+        strong: Array<AnyElementRef>;
     } = {
-        ps:     Array.from({ length: 2 }, () => useRef<Paragraph>(null)),
-        page:   useRef<Element>(null),
-        strong: Array.from({ length: 5 }, () => useRef<Element>(null))
+        ps:     Array.from({ length: 2 }, () => useRef<P>(null)),
+        page:   useRef<AnyElement>(null),
+        strong: Array.from({ length: 5 }, () => useRef<AnyElement>(null))
     }
 
     const contactOptionsSection: {
-        page:    ElementRef;
+        page:    AnyElementRef;
         bgIcons: Array<DivRef>;
         h3s:     Array<HeadingRef>;
-        ps:      Array<ParagraphRef>;
+        ps:      Array<PRef>;
         lis:     Array<LiRef>;
     } = {
-        page:    useRef<Element>(null),
+        page:    useRef<AnyElement>(null),
         bgIcons: Array.from({ length: 3 }, () => useRef<Div>(null)),
         h3s:     Array.from({ length: 3 }, () => useRef<Heading>(null)),
-        ps:      Array.from({ length: 3 }, () => useRef<Paragraph>(null)),
+        ps:      Array.from({ length: 3 }, () => useRef<P>(null)),
         lis:     Array.from({ length: 3 }, () => useRef<Li>(null))
     };
 
-    const ScrollDownButtons = [useRef<Button>(null), useRef<Button>(null)];
+    const ScrollDownButtons = [useRef<Btn>(null), useRef<Btn>(null)];
 
     useGSAP(() => {
         if (!heroSection.page.current) return;
