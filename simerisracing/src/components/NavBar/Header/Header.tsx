@@ -17,13 +17,22 @@ interface Props {
 
 function Header({ setSidebarOpen, ref, sidebarOpen } : Props) {
     const [hamburgerState, setHamburgerState] = useState(false);
+    const [headerHidden, setHeaderHidden]     = useState(false);
+
     function toggleHamburger() {
-        setHamburgerState(prev => !prev);
+        if (!headerHidden) {
+            setHamburgerState(prev => !prev);
+        } else {
+            setHamburgerState(false);
+        }
     }
 
     useEffect(() => {
         setHamburgerState(sidebarOpen);
-    }, [sidebarOpen])
+        if (sidebarOpen) {
+            setHeaderHidden(false);
+        }
+    }, [sidebarOpen]);
 
     const [supportsCornerShape, setSupportsCornerShape] = useState(false);
     useEffect(() => {
@@ -35,6 +44,44 @@ function Header({ setSidebarOpen, ref, sidebarOpen } : Props) {
     useEffect(() => {
         setSidebarOpen(hamburgerState);
     }, [hamburgerState, setSidebarOpen]);
+
+    const header = ref;
+
+    useGSAP(() => {
+        if (headerHidden) {
+            gsap.to(header.current, {
+                duration: 0.5,
+                y: '-100%',
+                ease: 'power1.in'
+            });
+        } else {
+            gsap.to(header.current, {
+                duration: 0.5,
+                y: 0,
+                ease: 'power1.out'
+            })
+        }
+    }, { dependencies: [headerHidden] });
+
+    useEffect(() => {
+        let lastScroll = 0;
+
+        function handleScroll() {
+            let currentScroll = window.scrollY;
+
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                setHeaderHidden(true);
+            } else {
+                setHeaderHidden(false);
+            }
+
+            lastScroll = currentScroll;
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
 
     const hamburger = useRef<HTMLButtonElement>(null);
     const topBar = useRef<HTMLDivElement>(null);
