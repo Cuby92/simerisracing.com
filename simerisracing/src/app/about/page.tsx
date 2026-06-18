@@ -16,7 +16,14 @@ function About() {
             <section className={`${s.PhilosophySection} page`} id="our-philosophy">
                 <ScrollDownButton nextSection={'#our-commitment'} />
                 <h2 className={s.h2}>Our Philosophy</h2>
-                <p>The most important factor for us is the customer satisfaction - we don't just want to sell a product and disappear. We want people to be fully satisfied with their purchase. In the design process we focus on durability, realism, and performance. We also don't make loud marketing like big brands - we focus on building a loyal, supportive community.</p>
+                <p className={s.p}>The most important factor for us is the customer satisfaction - we don't just want to sell a product and disappear. We want people to be fully satisfied with their purchase. In the design process we focus on durability, realism, and performance. We also don't make loud marketing like big brands - we focus on building a loyal, supportive community.</p>
+            </section>
+
+            <section className={`${s.CommitmentSection}`} id="our-commitment">
+                <ScrollDownButton nextSection={"#"} />
+                <h2 className={s.h2}>Our Commitment</h2>
+                <p className={s.p}>We are here for the long run. SIMERIS is building steadily and intentionally, with a roadmap prioritizing durability and meaningfun innovation. We still have a lot of work ahead of us, but every product release is one we stand behind.</p>
+                <p className={s.p}>We take responsibility for our gear - every product has 2 years warranty and lifetime support.</p>
             </section>
         </div>
     );
