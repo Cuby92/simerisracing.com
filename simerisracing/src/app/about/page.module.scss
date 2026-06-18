@@ -1,17 +1,43 @@
 @use './../../utils/variables.scss' as *;
 
-.h1 {
-    font-size: 7vw;
-    color: black;
-    font-family: var(--raleway), Arial;
-    font-weight: 100;
-    width: 100%;
-    text-align: center;
-    text-shadow: 
-        -1px -1px 3px $blue,
-        -1px -1px 3px $blue,
-        -1px -1px 3px $blue,
-        1px  1px  3px $pink,
-        1px  1px  3px $pink,
-        1px  1px  3px $pink;
+.Page {
+    position: relative;
+    .HeroSection {
+
+        .bgText {
+            font-size: 50vh;
+            position: absolute;
+            width: 1000vw;
+            font-weight: 300;
+            top: 50%;
+            left: 50%;
+            transform: translate(-5%, -90%);
+            color: #00f4;
+            filter: blur(2px);
+            z-index: -1;
+            text-transform: uppercase;
+            font-style: italic;
+
+            .slashes {
+                font-weight: 500;
+            }
+        }
+
+        .h1 {
+            font-size: 10rem;
+            font-weight: 200;
+            margin-bottom: 0;
+        }
+
+        .p {
+            font-size: 1.5rem;
+            text-align: center;
+            margin-top: 0;
+
+            .bold {
+                font-weight: 500;
+                color: #f0f;
+            }
+        }
+    }
 }
