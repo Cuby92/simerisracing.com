@@ -17,27 +17,41 @@ function About() {
             <section className={`${s.PhilosophySection} page`} id="our-philosophy">
                 <ScrollDownButton nextSection={'#our-commitment'} />
                 <h2 className={s.h2}>Our<strong>Philosophy</strong></h2>
-                <p className={s.p}>The most important factor for us is the customer <strong>satisfaction</strong> - we don't just want to sell a product and disappear. We want people to be fully satisfied with their purchase. In the design process we focus on <strong>durability</strong>, <strong>realism</strong>, and <strong>performance</strong>. We also don't make loud marketing like big brands - we focus on building a loyal, supportive <strong>community</strong>.</p>
+                <div className={s.ps}>
+                    <p className={s.p}>
+                        The most important factor for us is the customer <strong>satisfaction</strong> - we don't just want to sell a product and disappear. We want people to be fully satisfied with their purchase. In the design process we focus on <strong>durability</strong>, <strong>realism</strong>, and <strong>performance</strong>. We also don't make loud marketing like big brands - we focus on building a loyal, supportive <strong>community</strong>
+                    </p>
+                </div>
             </section>
 
             <section className={`${s.CommitmentSection} page`} id="our-commitment">
                 <ScrollDownButton nextSection={"#team"} />
                 <h2 className={s.h2}>Our<strong>Commitment</strong></h2>
-                <p className={s.p}>We are here for the long run. SIMERIS is building steadily and intentionally, with a roadmap prioritizing <strong>durability</strong> and meaningful <strong>innovation</strong>. We still have a lot of work ahead of us, but every product release is one we stand behind.</p>
-                <p className={s.p}>We take responsibility for our gear - every product has <strong>2 years of warranty</strong> and <strong>lifetime support</strong>.</p>
+                <div className={s.ps}>
+                    <p className={s.p}>
+                        We are here for the long run. SIMERIS is building steadily and intentionally, with a roadmap prioritizing <strong>durability</strong> and meaningful <strong>innovation</strong>. We still have a lot of work ahead of us, but every product release is one we stand behind.
+                    </p>
+                    <p className={s.p}>
+                        We take responsibility for our gear - every product has <strong>2 years of warranty</strong> and <strong>lifetime support</strong>.
+                    </p>
+                </div>
             </section>
 
             <section className={s.Team}>
                 <section className={`${s.cover} page`} id="team">
                     <ScrollDownButton nextSection={"#cuby"} />
-                    <h2 className={s.h2}>The <strong>People</strong> Behind SIMERIS</h2>
-                    <p className={s.p}>Every product starts with people who care about getting the details right. Meet the team building, testing and improving SIMERIS RACING.</p>
+                    <div className={s.content}>
+                        <h2 className={s.h2}>The <strong>People</strong> Behind SIMERIS</h2>
+                        <p className={s.p}>Every product starts with people who care about getting the details right. Meet the team building, testing and improving SIMERIS RACING.</p>
+                    </div>
                 </section>
 
                 <section className={`${s.CubySection} page`} id="cuby">
                     <ScrollDownButton nextSection={"#p4ncake"} />
-                    <h3 className={s.h3}>Jakub <i>Cuby</i> Barczyński</h3>
-                    <h4 className={s.h4}>Founder <span className={s.slash}>/</span> Web Developer <span className={s.slash}>/</span> Hardware Developer</h4>
+                    <div className={s.headings}>
+                        <h3 className={s.h3}>Jakub <i>Cuby</i> Barczyński</h3>
+                        <h4 className={s.h4}>Founder <span className={s.slash}>/</span> Web Developer <span className={s.slash}>/</span> Hardware Developer</h4>
+                    </div>
                     <div className={s.ps}>
                         <p className={s.p}>
                             I was always passionate about motorsports. I had started sim racing few years ago and I quickly found a lot of problems even premium brands don't solve. I had been looking for a shifter and found out there was no realistic one in an accessible price range. I decided to fill that gap.

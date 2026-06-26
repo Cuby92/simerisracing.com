@@ -77,17 +77,19 @@
         width: 100dvw;
         min-height: 100svh;
         position: relative;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding-inline: clamp(1rem, 5vw, 10vw);
         box-sizing: border-box;
-    }
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 5vh clamp(1rem, 5vw, 10vw) 15vh clamp(1rem, 5vw, 10vw);
 
-    .page .ScrollDownButton {
-        position: absolute;
-        bottom: 5%;
-        left: calc(50% - 3.5rem / 2);
+        .ScrollDownButton {
+            position: absolute;
+            bottom: 5%;
+            left: calc(50% - 3.5rem / 2);
+        }
+
+        & > * {
+            grid-area: 1 / 1;
+        }
     }
 }
