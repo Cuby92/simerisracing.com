@@ -7,6 +7,11 @@ import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useRef } from 'react';
 import { Page, Heading, P, AnyElement, A } from '@/utils/ref-types';
+import { mapArray, filterElement } from '@/utils/functions';
+import { CustomEase } from 'gsap/CustomEase';
+import { CustomBounce } from 'gsap/CustomBounce';
+
+gsap.registerPlugin(CustomEase, CustomBounce, ScrollTrigger);
 
 const s = styles;
 
@@ -67,12 +72,65 @@ function About() {
         }
     }
 
+    useGSAP(() => {
+        gsap.from([cover.h1?.current, cover.p?.current], {
+            duration: 1,
+            opacity: 0,
+            x: index => index % 2 ? 100 : -100,
+            stagger: 0.3
+        });
+    });
+
+    useGSAP(() => {
+        gsap.from(mapArray(cover.strongs), {
+            duration: 0.5,
+            color: '#fff',
+            delay: 1,
+            ease: CustomBounce.create("myBounce", {
+                strength: 0.5,
+                endAtStart: false,
+                squash: 1,
+                squashID: "myBounce-squash"
+            }),
+        });
+    });
+
+    useGSAP(() => {
+        if (!philosophyPage.page.current) return;
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: philosophyPage.page.current,
+                start: '90% bottom'
+            }
+        })
+        .from(filterElement(philosophyPage.h2), {
+            opacity: 0,
+            duration: 1
+        })
+        .from(filterElement(philosophyPage.p), {
+            opacity: 0,
+            x: -30,
+            duration: 1
+        }, "<0.5")
+        .from(mapArray(philosophyPage.strongs), {
+            color: '#fff',
+            duration: 0.5,
+            ease: CustomBounce.create("myBounce", {
+                strength: 0.5,
+                endAtStart: false,
+                squash: 1,
+                squashID: "myBounce-squash"
+            })
+        }, "<0.7");
+    })
+
     return (
         <div className={s.Page}>
             <section className={`${s.HeroSection} page`} ref={cover.page}>
                 <h1 className={s.bgText}><span className={s.slashes}>//</span>About Us</h1>
                 <h1 className={s.h1} ref={cover.h1}>About us</h1>
-                <p className={s.p} ref={cover.p}>We are a small team with a simple goal: build sim racing gear that actually makes sense. <strong className={s.bold}>Durable hardware, thoughtful engineering, and long-term support</strong> - shaped by people who race everyday.</p>
+                <p className={s.p} ref={cover.p}>We are a small team with a simple goal: build sim racing gear that actually makes sense. <strong className={s.bold} ref={cover.strongs?.[0]}>Durable hardware, thoughtful engineering, and long-term support</strong> - shaped by people who race everyday.</p>
                 <ScrollDownButton nextSection={'#our-philosophy'} />
             </section>
 
