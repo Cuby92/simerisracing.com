@@ -85,10 +85,12 @@
         .ScrollDownButton {
             position: absolute;
             bottom: 5%;
-            left: calc(50% - 3.5rem / 2);
+            left: 0;
+            right: 0;
+            width: auto;
         }
 
-        & > * {
+        & > :not(.ScrollDownButton) {
             grid-area: 1 / 1;
         }
     }
