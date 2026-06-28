@@ -1,17 +1,212 @@
 @use './../../utils/variables.scss' as *;
 
-.h1 {
-    font-size: 7vw;
-    color: black;
-    font-family: var(--raleway), Arial;
-    font-weight: 100;
-    width: 100%;
-    text-align: center;
-    text-shadow: 
-        -1px -1px 3px $blue,
-        -1px -1px 3px $blue,
-        -1px -1px 3px $blue,
-        1px  1px  3px $pink,
-        1px  1px  3px $pink,
-        1px  1px  3px $pink;
+.Page {
+    position: relative;
+    .HeroSection {
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        flex-direction: column;
+
+        .bgText {
+            font-size: 50vh;
+            position: absolute;
+            width: 1000vw;
+            font-weight: 300;
+            top: 50%;
+            left: 50%;
+            transform: translate(-5%, -90%);
+            color: #3334;
+            filter: blur(2px);
+            z-index: -1;
+            text-transform: uppercase;
+            font-style: italic;
+
+            .slashes {
+                font-weight: 500;
+            }
+        }
+
+        .h1 {
+            font-size: clamp(2rem, -0.1273rem + 9.4545vw, 15rem); // 2rem@360px 15rem@2560px
+            font-weight: 200;
+            margin-bottom: 0;
+        }
+
+        .p {
+            font-size: clamp(1rem, 0.8364rem + 0.7273vw, 2rem); // 1rem@360px 2rem@2560px
+            text-align: center;
+            margin-top: 0;
+
+            .bold {
+                font-weight: 500;
+                color: #f0f;
+            }
+        }
+    }
+
+    .PhilosophySection, .CommitmentSection {
+        & > * {
+            grid-area: 1 / 1;
+        }
+
+        .h2 {
+            font-weight: 100;
+            font-size: clamp(1.5rem, 0.1091rem + 6.1818vw, 10rem); // 1.5rem@360px 10rem@2560px
+            text-transform: uppercase;
+            letter-spacing: 1rem;
+            font-family: var(--raleway);
+            align-self: end;
+            justify-self: end;
+
+            strong {
+                font-weight: 400;
+            }
+        }
+
+        .ps {
+            font-size: clamp(1rem, 0.8364rem + 0.7273vw, 2rem); // 1rem@360px 2rem@2560px
+            left: 5%;
+            align-self: start;
+            margin-block: auto;
+
+            strong {
+                color: $pink;
+                font-weight: 500;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .h2 {
+                letter-spacing: 0.5rem;
+                justify-self: center;
+                align-self: start;
+                margin-top: 20svh;
+            }
+        }
+    }
+
+    .Team {
+        .cover {
+            @include flexAlign;
+
+            .content {
+                .h2 {
+                    font-weight: 100;
+                    font-size: 5rem;
+                    font-family: var(--raleway);
+                    text-transform: uppercase;
+                    letter-spacing: 1.5rem;
+                    text-align: center;
+                    margin-bottom: 2rem;
+
+                    strong {
+                        font-weight: 400;
+                    }
+                }
+
+                @media (max-width: 720px) {
+                    .h2 {
+                        font-size: 3rem;
+                        letter-spacing: 1rem;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .h2 {
+                        font-size: 2rem;
+                        letter-spacing: 0.9rem;
+                    }
+                }
+
+                .p {
+                    font-size: clamp(1rem, 0.9182rem + 0.3636vw, 1.5rem); // 1rem@360px 1.5rem@2560px
+                    text-align: center;
+                }
+            }
+        }
+
+        .headings {
+            .h3 {
+                font-weight: 300;
+                font-size: clamp(2rem, 1.3455rem + 2.9091vw, 6rem); // 2rem@360px 6rem@2560px
+                letter-spacing: clamp(0.5rem, 0.4182rem + 0.3636vw, 1rem); // 0.5rem@360px 1rem@2560px
+                margin: 0 0 1rem 0;
+            }
+
+            .h4 {
+                font-weight: 100;
+                font-size: 1.75rem;
+                letter-spacing: 0.5rem;
+                text-transform: uppercase;
+                font-family: var(--raleway);
+                margin: 0;
+
+                .slash {
+                    color: $pink;
+                    font-weight: 200;
+                    font-family: var(--poppins);
+                }
+            }
+        }
+
+        .ps {
+            font-size: clamp(1rem, 0.8364rem + 0.7273vw, 2rem); // 1rem@360px 2rem@2560px
+            text-align: left;
+            @include flexColumn(1rem);
+            @include alignGrid(end, center);
+            margin: 10% 0 0 10%;
+        }
+
+        .p {
+            margin: 0;
+        }
+
+        .links {
+            @include flexColumn(3rem);
+            @include alignGrid(start, center);
+            margin-top: 10% !important;
+
+            .link {
+                @include stdGradient;
+
+                &.ig {
+                    @include maskImage(4rem, url('/img/icons/ig.svg'))
+                }
+
+                &.dc {
+                    @include maskImage(4rem, url('/img/icons/dc.svg'));
+                }
+
+                &.linkedin {
+                    @include maskImage(4rem, url('/img/icons/linkedin.svg'));
+                }
+
+                &.github {
+                    @include maskImage(4rem, url('/img/icons/github.svg'));
+                }
+            }
+        }
+
+        @media (max-width: 768px) {
+            .h3, .h4 {
+                text-align: center;
+            }
+            
+            .ps {
+                margin: 20rem 0 5rem 0;
+                width: 100%;
+            }
+
+            .links {
+                flex-direction: row;
+                @include alignGrid(center, end);
+
+                .link {
+                    width: 2rem !important;
+                    height: 2rem !important;
+                }
+            }
+        }
+    }
 }

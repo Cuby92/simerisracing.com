@@ -1,5 +1,12 @@
 @use './../../utils/variables.scss' as *;
 
+.HeroSection, .IntroSection, .ContactOptionsSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .HeroSection {
     flex-direction: column;
     text-align: center;
