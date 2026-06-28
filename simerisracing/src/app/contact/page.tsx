@@ -7,7 +7,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
-import { Heading, HeadingRef, P, PRef, Btn, BtnRef, AnyElement, AnyElementRef, Div, DivRef, Li, LiRef } from '@/utils/ref-types';
+import { Heading, HeadingRef, P, PRef, AnyElement, AnyElementRef, Div, DivRef, Li, LiRef } from '@/utils/ref-types';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -49,8 +49,6 @@ function Contact() {
         ps:      Array.from({ length: 3 }, () => useRef<P>(null)),
         lis:     Array.from({ length: 3 }, () => useRef<Li>(null))
     };
-
-    const ScrollDownButtons = [useRef<Btn>(null), useRef<Btn>(null)];
 
     useGSAP(() => {
         if (!heroSection.page.current) return;
