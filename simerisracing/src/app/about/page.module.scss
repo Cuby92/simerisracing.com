@@ -46,10 +46,6 @@
     }
 
     .PhilosophySection, .CommitmentSection {
-        & > * {
-            grid-area: 1 / 1;
-        }
-
         .h2 {
             font-weight: 100;
             font-size: clamp(1.5rem, 0.1091rem + 6.1818vw, 10rem); // 1.5rem@360px 10rem@2560px
@@ -192,7 +188,7 @@
             .h3, .h4 {
                 text-align: center;
             }
-            
+
             .ps {
                 margin: 20rem 0 5rem 0;
                 width: 100%;
