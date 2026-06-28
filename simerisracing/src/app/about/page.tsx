@@ -73,8 +73,10 @@ function About() {
 
                 <section className={`${s.P4ncakeSection} page`} id="p4ncake">
                     <ScrollDownButton nextSection={"#adam"} />
-                    <h3 className={s.h3}>P4ncake</h3>
-                    <h4 className={s.h4}>Artist / Web Developer</h4>
+                    <div className={s.headings}>
+                        <h3 className={s.h3}>P4ncake</h3>
+                        <h4 className={s.h4}>Artist <span className={s.slash}>/</span> Web Developer</h4>
+                    </div>
                     <div className={s.ps}>
                         <p className={s.p}>
                             P4ncake is an experienced web developer and graphic designer with a broad portfolio. From simple websites, Minecraft resource packs, and emoji packs to fully featured web apps, she has worked on a wide range of creative and technical projects.
@@ -89,8 +91,10 @@ function About() {
                 </section>
 
                 <section className={`${s.AdamSection} page`} id="adam">
-                    <h3 className={s.h3}>Adam Barczyński</h3>
-                    <h4 className={s.h4}>Tester</h4>
+                    <div className={s.headings}>
+                        <h3 className={s.h3}>Adam Barczyński</h3>
+                        <h4 className={s.h4}>Tester</h4>
+                    </div>
                     <div className={s.ps}>
                         <p className={s.p}>
                             Adam is also a sim racer. He tests our gear and contribites to the design by giving honest feedback and pointing out real problems our products could solve.
