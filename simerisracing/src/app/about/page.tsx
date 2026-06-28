@@ -156,6 +156,33 @@ function About() {
         }, "<0.7");
     });
 
+    useGSAP(() => {
+        gsap.from(filterElement(teamSection.cover.h2), {
+            opacity: 0,
+            y: -50,
+            scrollTrigger: {
+                trigger: teamSection.cover.page.current,
+                start: "90% bottom",
+                end: 'top top',
+                scrub: true
+            }
+        });
+    });
+
+    useGSAP(() => {
+        gsap.from(filterElement(teamSection.cover.p), {
+            opacity: 0,
+            y: 20,
+            scrollTrigger: {
+                trigger: teamSection.cover.page.current,
+                start: "90% bottom",
+                end: 'top top',
+                scrub: true
+            },
+            duration: 1
+        })
+    })
+
     return (
         <div className={s.Page}>
             <section className={`${s.HeroSection} page`} ref={cover.page}>
