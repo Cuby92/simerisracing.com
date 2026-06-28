@@ -15,3 +15,22 @@
 
  export type Li            = HTMLLIElement        | null;
  export type LiRef         = React.RefObject<Li>;
+
+ export type A             = HTMLAnchorElement    | null;
+ export type ARef          = React.RefObject<A>;
+
+ export interface Page {
+    page    : AnyElementRef;
+    h1?     : HeadingRef;
+    h2?     : HeadingRef;
+    h2s?    : Array<HeadingRef>;
+    h3?     : HeadingRef;
+    h3s?    : Array<HeadingRef>;
+    h4?     : HeadingRef;
+    h4s?    : Array<HeadingRef>;
+    p?      : PRef;
+    ps?     : Array<PRef>;
+    lis?    : Array<LiRef>;
+    strongs?: Array<AnyElementRef>;
+    links?  : Array<ARef>;
+ }
