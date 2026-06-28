@@ -180,8 +180,8 @@ function About() {
                 scrub: true
             },
             duration: 1
-        })
-    })
+        });
+    });
 
     return (
         <div className={s.Page}>
