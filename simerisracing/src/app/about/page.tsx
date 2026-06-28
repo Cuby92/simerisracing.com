@@ -33,8 +33,8 @@ function About() {
     const commitmentPage: Page = {
         page:             useRef<AnyElement>(null),
         h2:               useRef<Heading>(null),
-        p:                useRef<P>(null),
-        strongs:          Array.from({ length: 4 }, () => useRef<AnyElement>(null)),
+        ps:               Array.from({ length: 2}, () => useRef<P>(null)),
+        strongs:          Array.from({ length: 5 }, () => useRef<AnyElement>(null)),
     }
 
     const teamSection: {
@@ -123,7 +123,38 @@ function About() {
                 squashID: "myBounce-squash"
             })
         }, "<0.7");
-    })
+    });
+
+    useGSAP(() => {
+        if (!commitmentPage.page.current) return;
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: commitmentPage.page.current,
+                start: '90% bottom'
+            }
+        })
+        .from(filterElement(commitmentPage.h2), {
+            opacity: 0,
+            duration: 1
+        })
+        .from(mapArray(commitmentPage.ps), {
+            opacity: 0,
+            x: -30,
+            duration: 1,
+            stagger: 0.3
+        }, "<0.5")
+        .from(mapArray(commitmentPage.strongs), {
+            color: '#fff',
+            duration: 0.5,
+            ease: CustomBounce.create("myBounce", {
+                strength: 0.5,
+                endAtStart: false,
+                squash: 1,
+                squashID: "myBounce-squash"
+            })
+        }, "<0.7");
+    });
 
     return (
         <div className={s.Page}>
