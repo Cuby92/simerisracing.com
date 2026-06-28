@@ -64,10 +64,10 @@ function About() {
                         </p>
                     </div>
                     <div className={s.links}>
-                        <a className={`${s.link} ${s.ig}`}href="https://instagram.com/cuby927" target="_blank"></a>
-                        <a className={`${s.link} ${s.dc}`}href="https://discord.gg/CB7Bjvtn" target="_blank"></a>
-                        <a className={`${s.link} ${s.linkedin}`}href="https://pl.linkedin.com/in/jakub-barczy%C5%84ski-512-16b3aa" target="_blank"></a>
-                        <a className={`${s.link} ${s.github}`}href="https://github.com/Cuby92" target="_blank"></a>
+                        <a className={`${s.link} ${s.ig}`} href="https://instagram.com/cuby927" target="_blank"></a>
+                        <a className={`${s.link} ${s.dc}`} href="https://discord.gg/CB7Bjvtn" target="_blank"></a>
+                        <a className={`${s.link} ${s.linkedin}`} href="https://pl.linkedin.com/in/jakub-barczy%C5%84ski-512-16b3aa" target="_blank"></a>
+                        <a className={`${s.link} ${s.github}`} href="https://github.com/Cuby92" target="_blank"></a>
                     </div>
                 </section>
 
