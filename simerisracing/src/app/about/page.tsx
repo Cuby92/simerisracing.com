@@ -72,6 +72,10 @@ function About() {
         }
     }
 
+    // -   A  N  I  M  A  T  I  O  N  S   - //
+
+    // COVER
+    // H1 and paragraph
     useGSAP(() => {
         gsap.from([cover.h1?.current, cover.p?.current], {
             duration: 1,
@@ -81,6 +85,7 @@ function About() {
         });
     });
 
+    // Bold blink
     useGSAP(() => {
         gsap.from(mapArray(cover.strongs), {
             duration: 0.5,
@@ -91,10 +96,11 @@ function About() {
                 endAtStart: false,
                 squash: 1,
                 squashID: "myBounce-squash"
-            }),
+            })
         });
     });
 
+    // PHILOSOPHY PAGE ANIMATIONS
     useGSAP(() => {
         if (!philosophyPage.page.current) return;
 
@@ -125,6 +131,7 @@ function About() {
         }, "<0.7");
     });
 
+    // COMMITMENT PAGE ANIMATIONS
     useGSAP(() => {
         if (!commitmentPage.page.current) return;
 
@@ -156,6 +163,8 @@ function About() {
         }, "<0.7");
     });
 
+    // TEAM SECTION COVER ANIMATIONS
+    // H2
     useGSAP(() => {
         gsap.from(filterElement(teamSection.cover.h2), {
             opacity: 0,
@@ -169,6 +178,7 @@ function About() {
         });
     });
 
+    // Paragraph
     useGSAP(() => {
         gsap.from(filterElement(teamSection.cover.p), {
             opacity: 0,
@@ -183,6 +193,7 @@ function About() {
         });
     });
 
+    // CUBY PAGE ANIMATIONS
     useGSAP(() => {
         gsap.timeline({
             scrollTrigger: {
@@ -195,7 +206,7 @@ function About() {
             x: index => index <= 1 ? -100 : 50,
             duration: 1,
             stagger: 0.3,
-            toggleActions: 'play reverse restart reverse',
+            toggleActions: 'play reverse restart reverse'
         })
         .from(mapArray(teamSection.cuby.links), {
             duration: 0.7,
@@ -206,6 +217,7 @@ function About() {
         }, "<0.7");
     });
 
+    // P4NCAKE PAGE ANIMATIONS
     useGSAP(() => {
         gsap.timeline({
             scrollTrigger: {
@@ -228,6 +240,7 @@ function About() {
         }, "<0.7");
     });
 
+    // ADAM SECTION ANIMATIONS
     useGSAP(() => {
         gsap.from([filterElement(teamSection.adam.h3), filterElement(teamSection.adam.h4), filterElement(teamSection.adam.p)], {
             opacity: 0,
