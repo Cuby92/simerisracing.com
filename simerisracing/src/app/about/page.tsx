@@ -183,6 +183,29 @@ function About() {
         });
     });
 
+    useGSAP(() => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: teamSection.cuby.page.current,
+                start: "90% bottom"
+            }
+        })
+        .from([filterElement(teamSection.cuby.h3), filterElement(teamSection.cuby.h4), ...mapArray(teamSection.cuby.ps)], {
+            opacity: 0,
+            x: index => index <= 1 ? -100 : 50,
+            duration: 1,
+            stagger: 0.3,
+            toggleActions: 'play reverse restart reverse',
+        })
+        .from(mapArray(teamSection.cuby.links), {
+            duration: 0.7,
+            opacity: 0,
+            x: window.innerWidth >= 769 ? -50 : 0,
+            y: window.innerWidth <  769 ? 50  : 0,
+            stagger: 0.3
+        }, "<0.7");
+    });
+
     return (
         <div className={s.Page}>
             <section className={`${s.HeroSection} page`} ref={cover.page}>
