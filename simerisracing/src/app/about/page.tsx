@@ -72,6 +72,10 @@ function About() {
         }
     }
 
+    // -   A  N  I  M  A  T  I  O  N  S   - //
+
+    // COVER
+    // H1 and paragraph
     useGSAP(() => {
         gsap.from([cover.h1?.current, cover.p?.current], {
             duration: 1,
@@ -81,6 +85,7 @@ function About() {
         });
     });
 
+    // Bold blink
     useGSAP(() => {
         gsap.from(mapArray(cover.strongs), {
             duration: 0.5,
@@ -91,17 +96,19 @@ function About() {
                 endAtStart: false,
                 squash: 1,
                 squashID: "myBounce-squash"
-            }),
+            })
         });
     });
 
+    // PHILOSOPHY PAGE ANIMATIONS
     useGSAP(() => {
         if (!philosophyPage.page.current) return;
 
         gsap.timeline({
             scrollTrigger: {
                 trigger: philosophyPage.page.current,
-                start: '90% bottom'
+                start: '90% bottom',
+                toggleActions: 'play reverse restart reverse'
             }
         })
         .from(filterElement(philosophyPage.h2), {
@@ -125,13 +132,15 @@ function About() {
         }, "<0.7");
     });
 
+    // COMMITMENT PAGE ANIMATIONS
     useGSAP(() => {
         if (!commitmentPage.page.current) return;
 
         gsap.timeline({
             scrollTrigger: {
                 trigger: commitmentPage.page.current,
-                start: '90% bottom'
+                start: '90% bottom',
+                toggleActions: 'play reverse restart reverse'
             }
         })
         .from(filterElement(commitmentPage.h2), {
@@ -156,7 +165,11 @@ function About() {
         }, "<0.7");
     });
 
+    // TEAM SECTION COVER ANIMATIONS
+    // H2
     useGSAP(() => {
+        if (!teamSection.cover.page.current) return;
+
         gsap.from(filterElement(teamSection.cover.h2), {
             opacity: 0,
             y: -50,
@@ -169,7 +182,10 @@ function About() {
         });
     });
 
+    // Paragraph
     useGSAP(() => {
+        if (!teamSection.cover.page.current) return;
+
         gsap.from(filterElement(teamSection.cover.p), {
             opacity: 0,
             y: 20,
@@ -180,8 +196,77 @@ function About() {
                 scrub: true
             },
             duration: 1
+        });
+    });
+
+    // CUBY PAGE ANIMATIONS
+    useGSAP(() => {
+        if (!teamSection.cuby.page.current) return;
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: teamSection.cuby.page.current,
+                start: "90% bottom",
+                toggleActions: 'play reverse restart reverse'
+            }
         })
-    })
+        .from([filterElement(teamSection.cuby.h3), filterElement(teamSection.cuby.h4), ...mapArray(teamSection.cuby.ps)], {
+            opacity: 0,
+            x: index => index <= 1 ? -100 : 50,
+            duration: 1,
+            stagger: 0.3
+        })
+        .from(mapArray(teamSection.cuby.links), {
+            duration: 0.7,
+            opacity: 0,
+            x: window.innerWidth >= 769 ? -50 : 0,
+            y: window.innerWidth <  769 ? 50  : 0,
+            stagger: 0.3
+        }, "<0.7");
+    });
+
+    // P4NCAKE PAGE ANIMATIONS
+    useGSAP(() => {
+        if (!teamSection.p4ncake.page.current) return;
+
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: teamSection.p4ncake.page.current,
+                start: "90% bottom",
+                toggleActions: 'play reverse restart reverse'
+            }
+        })
+        .from([filterElement(teamSection.p4ncake.h3), filterElement(teamSection.p4ncake.h4), ...mapArray(teamSection.p4ncake.ps)], {
+            opacity: 0,
+            x: index => index <= 1 ? -100 : 50,
+            duration: 1,
+            stagger: 0.3
+        })
+        .from(mapArray(teamSection.p4ncake.links), {
+            duration: 0.7,
+            opacity: 0,
+            x: window.innerWidth >= 769 ? -50 : 0,
+            y: window.innerWidth <  769 ? 50  : 0,
+            stagger: 0.3
+        }, "<0.7");
+    });
+
+    // ADAM SECTION ANIMATIONS
+    useGSAP(() => {
+        if (!teamSection.adam.page.current) return;
+
+        gsap.from([filterElement(teamSection.adam.h3), filterElement(teamSection.adam.h4), filterElement(teamSection.adam.p)], {
+            opacity: 0,
+            x: index => index <= 1 ? -100 : 50,
+            duration: 1,
+            stagger: 0.3,
+            scrollTrigger: {
+                trigger: teamSection.adam.page.current,
+                start: "90% bottom",
+                toggleActions: 'play reverse restart reverse'
+            }
+        });
+    });
 
     return (
         <div className={s.Page}>
@@ -234,7 +319,7 @@ function About() {
                             I was always passionate about motorsports. I had started sim racing few years ago and I quickly found a lot of problems even premium brands don't solve. I had been looking for a shifter and found out there was no realistic one in an accessible price range. I decided to fill that gap.
                         </p>
                         <p className={s.p} ref={teamSection.cuby.ps?.[1]}>
-                            I spend months designing and testing our gear. If something has a chance to brake or doesn't feel right it doesn't leave the workshop.
+                            I spend months designing and testing our gear. If something has a chance to break or doesn't feel right it doesn't leave the workshop.
                         </p>
                         <p className={s.p} ref={teamSection.cuby.ps?.[2]}>
                             You can contact me at any time if you have any questions or just want to talk.
