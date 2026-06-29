@@ -107,7 +107,8 @@ function About() {
         gsap.timeline({
             scrollTrigger: {
                 trigger: philosophyPage.page.current,
-                start: '90% bottom'
+                start: '90% bottom',
+                toggleActions: 'play reverse restart reverse'
             }
         })
         .from(filterElement(philosophyPage.h2), {
@@ -138,7 +139,8 @@ function About() {
         gsap.timeline({
             scrollTrigger: {
                 trigger: commitmentPage.page.current,
-                start: '90% bottom'
+                start: '90% bottom',
+                toggleActions: 'play reverse restart reverse'
             }
         })
         .from(filterElement(commitmentPage.h2), {
@@ -204,15 +206,15 @@ function About() {
         gsap.timeline({
             scrollTrigger: {
                 trigger: teamSection.cuby.page.current,
-                start: "90% bottom"
+                start: "90% bottom",
+                toggleActions: 'play reverse restart reverse'
             }
         })
         .from([filterElement(teamSection.cuby.h3), filterElement(teamSection.cuby.h4), ...mapArray(teamSection.cuby.ps)], {
             opacity: 0,
             x: index => index <= 1 ? -100 : 50,
             duration: 1,
-            stagger: 0.3,
-            toggleActions: 'play reverse restart reverse'
+            stagger: 0.3
         })
         .from(mapArray(teamSection.cuby.links), {
             duration: 0.7,
@@ -230,7 +232,8 @@ function About() {
         gsap.timeline({
             scrollTrigger: {
                 trigger: teamSection.p4ncake.page.current,
-                start: "90% bottom"
+                start: "90% bottom",
+                toggleActions: 'play reverse restart reverse'
             }
         })
         .from([filterElement(teamSection.p4ncake.h3), filterElement(teamSection.p4ncake.h4), ...mapArray(teamSection.p4ncake.ps)], {
@@ -259,7 +262,8 @@ function About() {
             stagger: 0.3,
             scrollTrigger: {
                 trigger: teamSection.adam.page.current,
-                start: "90% bottom"
+                start: "90% bottom",
+                toggleActions: 'play reverse restart reverse'
             }
         });
     });
