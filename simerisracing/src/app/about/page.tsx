@@ -206,6 +206,28 @@ function About() {
         }, "<0.7");
     });
 
+    useGSAP(() => {
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: teamSection.p4ncake.page.current,
+                start: "90% bottom"
+            }
+        })
+        .from([filterElement(teamSection.p4ncake.h3), filterElement(teamSection.p4ncake.h4), ...mapArray(teamSection.p4ncake.ps)], {
+            opacity: 0,
+            x: index => index <= 1 ? -100 : 50,
+            duration: 1,
+            stagger: 0.3
+        })
+        .from(mapArray(teamSection.p4ncake.links), {
+            duration: 0.7,
+            opacity: 0,
+            x: window.innerWidth >= 769 ? -50 : 0,
+            y: window.innerWidth <  769 ? 50  : 0,
+            stagger: 0.3
+        }, "<0.7");
+    });
+
     return (
         <div className={s.Page}>
             <section className={`${s.HeroSection} page`} ref={cover.page}>
