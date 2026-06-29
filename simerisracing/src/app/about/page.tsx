@@ -166,6 +166,8 @@ function About() {
     // TEAM SECTION COVER ANIMATIONS
     // H2
     useGSAP(() => {
+        if (!teamSection.cover.page.current) return;
+
         gsap.from(filterElement(teamSection.cover.h2), {
             opacity: 0,
             y: -50,
@@ -180,6 +182,8 @@ function About() {
 
     // Paragraph
     useGSAP(() => {
+        if (!teamSection.cover.page.current) return;
+
         gsap.from(filterElement(teamSection.cover.p), {
             opacity: 0,
             y: 20,
@@ -195,6 +199,8 @@ function About() {
 
     // CUBY PAGE ANIMATIONS
     useGSAP(() => {
+        if (!teamSection.cuby.page.current) return;
+
         gsap.timeline({
             scrollTrigger: {
                 trigger: teamSection.cuby.page.current,
@@ -219,6 +225,8 @@ function About() {
 
     // P4NCAKE PAGE ANIMATIONS
     useGSAP(() => {
+        if (!teamSection.p4ncake.page.current) return;
+
         gsap.timeline({
             scrollTrigger: {
                 trigger: teamSection.p4ncake.page.current,
@@ -242,6 +250,8 @@ function About() {
 
     // ADAM SECTION ANIMATIONS
     useGSAP(() => {
+        if (!teamSection.adam.page.current) return;
+
         gsap.from([filterElement(teamSection.adam.h3), filterElement(teamSection.adam.h4), filterElement(teamSection.adam.p)], {
             opacity: 0,
             x: index => index <= 1 ? -100 : 50,
