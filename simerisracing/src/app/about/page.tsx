@@ -228,6 +228,19 @@ function About() {
         }, "<0.7");
     });
 
+    useGSAP(() => {
+        gsap.from([filterElement(teamSection.adam.h3), filterElement(teamSection.adam.h4), filterElement(teamSection.adam.p)], {
+            opacity: 0,
+            x: index => index <= 1 ? -100 : 50,
+            duration: 1,
+            stagger: 0.3,
+            scrollTrigger: {
+                trigger: teamSection.adam.page.current,
+                start: "90% bottom"
+            }
+        });
+    });
+
     return (
         <div className={s.Page}>
             <section className={`${s.HeroSection} page`} ref={cover.page}>
