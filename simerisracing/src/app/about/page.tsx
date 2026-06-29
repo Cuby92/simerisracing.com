@@ -257,7 +257,7 @@ function About() {
                             I was always passionate about motorsports. I had started sim racing few years ago and I quickly found a lot of problems even premium brands don't solve. I had been looking for a shifter and found out there was no realistic one in an accessible price range. I decided to fill that gap.
                         </p>
                         <p className={s.p} ref={teamSection.cuby.ps?.[1]}>
-                            I spend months designing and testing our gear. If something has a chance to brake or doesn't feel right it doesn't leave the workshop.
+                            I spend months designing and testing our gear. If something has a chance to break or doesn't feel right it doesn't leave the workshop.
                         </p>
                         <p className={s.p} ref={teamSection.cuby.ps?.[2]}>
                             You can contact me at any time if you have any questions or just want to talk.
