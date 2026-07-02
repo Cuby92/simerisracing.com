@@ -8,6 +8,7 @@ import { useGSAP } from '@gsap/react';
 import { useRef } from 'react';
 import { Page, DivRef, Div, AnyElement } from '@/utils/ref-types';
 import { filterElement } from '@/utils/functions';
+import banner from '@/../public/img/panther-hp-transparent.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -62,10 +63,11 @@ function PantherHP() {
                 <div className={s.bannerWrapper} ref={bannerPage.banner}>
                     <Image 
                         alt="PANTHER HP"
-                        src="/img/panther-hp-transparent.png"
+                        src={banner}
                         width={2560}
                         height={2560}
                         className={s.banner}
+                        placeholder="blur"
                     />
                 </div>
             </section>
