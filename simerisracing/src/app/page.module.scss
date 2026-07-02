@@ -1,17 +1,37 @@
 @use '../utils/variables' as *;
 
-.h1 {
-    font-size: 7vw;
-    color: black;
-    font-family: var(--raleway), Arial;
-    font-weight: 100;
-    width: 100%;
-    text-align: center;
-    text-shadow: 
-        -1px -1px 3px $blue,
-        -1px -1px 3px $blue,
-        -1px -1px 3px $blue,
-        1px  1px  3px $pink,
-        1px  1px  3px $pink,
-        1px  1px  3px $pink;
+.Cover {
+    h1 {
+        font-size: 7vw;
+        color: black;
+        font-family: var(--raleway), Arial;
+        font-weight: 100;
+        width: 100%;
+        text-shadow: 
+            -1px -1px 3px $blue,
+            -1px -1px 3px $blue,
+            -1px -1px 3px $blue,
+            1px  1px  3px $pink,
+            1px  1px  3px $pink,
+            1px  1px  3px $pink;
+        @include alignGrid(center, center, center);
+    }
+
+    nav {
+        @include alignGrid(center, end);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            font-weight: 200;
+        }
+
+        li {
+            font-size: 1.2rem;
+            &::marker {
+                color: #f0f;
+            }
+        }
+    }
 }
